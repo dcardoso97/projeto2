@@ -69,18 +69,18 @@
                     
                 </li>
                 <li>
-                    <a href="InserirFormador.php"><i class="fa fa-list-alt " aria-hidden="true"> </i> <span style="margin-left:10px;">Formadores</span>  </a>
+                    <a href="InserirFormador.php"><i class="fa fa-list-alt " aria-hidden="true"> </i> <span style="margin-left:10px;">Notas</span>  </a>
                 </li>
                 <li>
-                    <a href="#"> <i class="	fa fa-list " aria-hidden="true"> </i> <span style="margin-left:10px;"> Formandos</span> </a>
+                    <a href="#"> <i class="	fa fa-list " aria-hidden="true"> </i> <span style="margin-left:10px;"> Testes</span> </a>
                 </li>
                 <li>
                     <a href="#"> <i class="fa fa-paste" aria-hidden="true"> </i> <span style="margin-left:10px;"> Avalia&ccedil;&otilde;es</span> </a>
                 </li>
                 <li>
-                    <a href="#"> <i class="	fa fa-unlink" aria-hidden="true"> </i> <span style="margin-left:10px;">Associar UFCD'S</span> </a>
+                    <a href="#"> <i class="	fa fa-unlink" aria-hidden="true"> </i> <span style="margin-left:10px;">UFCD'S</span> </a>
                 </li>
-              
+
 
                    <li class="sidebar-brand">
                     

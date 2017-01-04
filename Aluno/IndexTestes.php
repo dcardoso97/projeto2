@@ -73,21 +73,19 @@ $user= $_SESSION['username'];
             <ul class="sidebar-nav" style="margin-left:0;">
                 <li class="sidebar-brand">
                     
-                    
+                       </li>
+                <li>
+                    <a href="InserirFormador.php"><i class="fa fa-list-alt " aria-hidden="true"> </i> <span style="margin-left:10px;">Notas</span>  </a>
                 </li>
                 <li>
-                    <a href="InserirFormador.php"><i class="fa fa-list-alt " aria-hidden="true"> </i> <span style="margin-left:10px;">Formadores</span>  </a>
-                </li>
-                <li>
-                    <a href="#"> <i class="	fa fa-list " aria-hidden="true"> </i> <span style="margin-left:10px;"> Formandos</span> </a>
+                    <a href="#"> <i class="	fa fa-list " aria-hidden="true"> </i> <span style="margin-left:10px;"> Testes</span> </a>
                 </li>
                 <li>
                     <a href="#"> <i class="fa fa-paste" aria-hidden="true"> </i> <span style="margin-left:10px;"> Avalia&ccedil;&otilde;es</span> </a>
                 </li>
                 <li>
-                    <a href="#"> <i class="	fa fa-unlink" aria-hidden="true"> </i> <span style="margin-left:10px;">Associar UFCD'S</span> </a>
+                    <a href="#"> <i class="	fa fa-unlink" aria-hidden="true"> </i> <span style="margin-left:10px;">UFCD'S</span> </a>
                 </li>
-              
 
                    <li class="sidebar-brand">
                     
@@ -118,50 +116,50 @@ $user= $_SESSION['username'];
             		<div class="form-check">
             			<label class="form-check-label">
             				<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-            				a)O “drive” é um periférico de entrada
+            				a)O "drive" e um periférico de entrada
           				</label>
         		</div>
         			<div class="form-check">
          		<label class="form-check-label">
 			            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-			            O “scanner” é um periférico só de saída
+			            O "scanner" é um periférico so de saida
           		</label>
 			</div>
   			</div>
   			
-  			<legend >2. Com relação à Unidade Central de Processamento, julgue as afirmativas.</legend>
+  			<legend >2. Com relacao a Unidade Central de Processamento, julgue as afirmativas.</legend>
           		<div class="col-sm-10">
             		<div class="form-check">
             			<label class="form-check-label">
 				            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-				            É composta exclusivamente pela Unidade deControle.
+				            E composta exclusivamente pela Unidade deControle.
           				</label>
         			</div>
         			<div class="form-check">
 	         			<label class="form-check-label">
 	            			<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-	            			É um dispositivo de entrada do computador
+	            			E um dispositivo de entrada do computador
 	          			</label>
 					</div>
   			</div>
   			
-			<legend >3. Com relação aos Periféricos de Entrada e Saída doComputador, responda</legend>
+			<legend >3. Com relacao aos Perifericos de Entrada e Saida doComputador, responda</legend>
           		<div class="col-sm-10">
             		<div class="form-check">
             			<label class="form-check-label">
             				<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-            					O Scanner é um dispositivo que permitecapturar imagens de um documento trazendo-as para o computador.
+            					O Scanner e um dispositivo que permite capturar imagens de um documento trazendo-as para o computador.
           				</label>
         			</div>
         		<div class="form-check">
 	         		<label class="form-check-label">
 			        	    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-			        	    O Monitor de Vídeo Touch Screen é umdispositivo unicamente de entrada
+			        	    O Monitor de Video Touch Screen e um dispositivo unicamente de entrada
 	          		</label>
 				</div>
   			</div>
   			
-			<legend >Com relação ao uso do teclado:</legend>
+			<legend >4. Com relacao ao uso do teclado:</legend>
           		<div class="col-sm-10">
             		<div class="form-check">
            				 <label class="form-check-label">
@@ -172,7 +170,7 @@ $user= $_SESSION['username'];
         	<div class="form-check">
 	         	<label class="form-check-label">
 		            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-	           		 se for pressionada a tecla SHIFT em conjuntocom a letra a, sempre aparecerá como respostaA (a maiúsculo);
+	           		 se for pressionada a tecla SHIFT em conjuntocom a letra a, sempre aparecera como resposta (a maiusculo);
           		</label>
 			</div>
   			</div>
