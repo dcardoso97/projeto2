@@ -1,3 +1,10 @@
+<?php 
+if (!isset($_SESSION))
+{
+     session_start();	 
+}
+$user= $_SESSION['username'];
+?>
 <html>
 	<head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +23,7 @@
 	<body>
 		
 		  <nav class="navbar navbar-minha  navbar-fixed-top" role="navigation" style="margin-bottom: 0;">
-		  		<a class="navbar-brand" href="#">Formando</a>
+		  		<a class="navbar-brand" href="#">Testes</a>
 		  		<div class="collapse navbar-collapse">
 			  		<ul class="nav navbar-nav navbar-right">
 	                <li class="dropdown">
@@ -105,7 +112,71 @@
                     <div class="col-lg-12">                    
 </a>  
    
-       
+  
+       		<legend >1. Indique a(s) alternativa(s) correta(s) e incorreta(s).</legend>
+          		<div class="col-sm-10">
+            		<div class="form-check">
+            			<label class="form-check-label">
+            				<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+            				a)O “drive” é um periférico de entrada
+          				</label>
+        		</div>
+        			<div class="form-check">
+         		<label class="form-check-label">
+			            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+			            O “scanner” é um periférico só de saída
+          		</label>
+			</div>
+  			</div>
+  			
+  			<legend >2. Com relação à Unidade Central de Processamento, julgue as afirmativas.</legend>
+          		<div class="col-sm-10">
+            		<div class="form-check">
+            			<label class="form-check-label">
+				            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+				            É composta exclusivamente pela Unidade deControle.
+          				</label>
+        			</div>
+        			<div class="form-check">
+	         			<label class="form-check-label">
+	            			<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+	            			É um dispositivo de entrada do computador
+	          			</label>
+					</div>
+  			</div>
+  			
+			<legend >3. Com relação aos Periféricos de Entrada e Saída doComputador, responda</legend>
+          		<div class="col-sm-10">
+            		<div class="form-check">
+            			<label class="form-check-label">
+            				<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+            					O Scanner é um dispositivo que permitecapturar imagens de um documento trazendo-as para o computador.
+          				</label>
+        			</div>
+        		<div class="form-check">
+	         		<label class="form-check-label">
+			        	    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+			        	    O Monitor de Vídeo Touch Screen é umdispositivo unicamente de entrada
+	          		</label>
+				</div>
+  			</div>
+  			
+			<legend >Com relação ao uso do teclado:</legend>
+          		<div class="col-sm-10">
+            		<div class="form-check">
+           				 <label class="form-check-label">
+				            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+				            a Tecla F1 no Word para Windows serve paraativar o programa de ajuda do Excel;
+          				</label>
+        		</div>
+        	<div class="form-check">
+	         	<label class="form-check-label">
+		            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+	           		 se for pressionada a tecla SHIFT em conjuntocom a letra a, sempre aparecerá como respostaA (a maiúsculo);
+          		</label>
+			</div>
+  			</div>
+
 
     </body>
 </html><!-- Meio-->
