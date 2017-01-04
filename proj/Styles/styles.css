@@ -1,0 +1,101 @@
+/* CSS Document */
+div.container{
+	opacity:1;
+	}
+	
+	div.info
+	{
+		position:absolute;
+		right:9.4%;
+		width:81.2%;
+		height:85%;
+		background-color:transparant;
+		visibility:hidden;
+		
+	}
+div.ecra
+{
+	background-color:white;
+	width:100%;
+	height:100%;
+	position:absolute;
+}
+div.jumbotron
+{
+	width:100%; 
+	height:80%;
+	padding:5%;
+	position:fixed;
+}
+
+div.botoes{
+	background-color:transparant; 
+	width:10%;
+	height:5%; 
+	left:85%; 
+	bottom:10%;
+	position:fixed;
+	margin:auto;
+
+}
+span.aval{
+	background-color:transparant; 
+	width:100%;
+	height:10%;
+	position:fixed;
+
+}
+
+#textspang{
+	color:white;
+}
+
+#textspanf{
+	color:white;
+}
+#fafb{
+	background-color:#3B5998;
+	width:25%;
+	margin-left:20%;
+	position:relative;
+	display:inline;
+	color:white;
+	
+}
+#fafb:hover{
+	border-style:groove;
+	border-color:blue;	
+}
+#fagoogle{
+	background-color:#DD4B39;
+	width:25%;
+	margin-left:10%;
+	position:relative;
+	display:inline;
+		color:white;
+	
+}
+#fagoogle:hover{
+	border-style:solid;
+	border-color:red;	
+}
+
+img.img-rounded{
+	width:30%;
+	left:35%;
+	margin-top:-6.5%;
+	position:relative;
+	z-index:0;
+
+}
+
+input.form-control{
+	margin-top:2%;
+	width:40%;
+	margin-left:auto;
+	margin-right:auto;
+	autocomplete:off;
+	
+}
+
+
