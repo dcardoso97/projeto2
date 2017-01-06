@@ -1,3 +1,10 @@
+<?php 
+if (!isset($_SESSION))
+{
+     session_start();	 
+}
+$user= $_SESSION['username'];
+?>
 <html>
 	<head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -5,6 +12,12 @@
 	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="aluno.css">
 	<link rel="stylesheet" href="navbar.css">
+	<!-- tabela -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+	<!--tabela-->
 	<head><link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -16,7 +29,7 @@
 	<body>
 		
 		  <nav class="navbar navbar-minha  navbar-fixed-top" role="navigation" style="margin-bottom: 0;">
-		  		<a class="navbar-brand" href="#">Formando</a>
+		  		<a class="navbar-brand" href="#">Alunos</a>
 		  		<div class="collapse navbar-collapse">
 			  		<ul class="nav navbar-nav navbar-right">
 	                <li class="dropdown">
@@ -66,8 +79,7 @@
             <ul class="sidebar-nav" style="margin-left:0;">
                 <li class="sidebar-brand">
                     
-                    
-                </li>
+                       </li>
                 <li>
                     <a href="InserirFormador.php"><i class="fa fa-list-alt " aria-hidden="true"> </i> <span style="margin-left:10px;">Notas</span>  </a>
                 </li>
@@ -80,7 +92,6 @@
                 <li>
                     <a href="#"> <i class="	fa fa-unlink" aria-hidden="true"> </i> <span style="margin-left:10px;">UFCD'S</span> </a>
                 </li>
-
 
                    <li class="sidebar-brand">
                     
@@ -104,8 +115,55 @@
                 <div class="row">
                     <div class="col-lg-12">                    
 </a>  
-   
-       
+   		<h1> Os meus dados </h1>
+   		
+   		<div class="form-group row">
+  <label for="example-text-input" class="col-xs-2 col-form-label">Username:</label>
+  <div class="col-xs-10">
+    <input readonly class="form-control" type="text" value="php" id="example-text-input">
+  </div>
+</div>
 
+<div class="form-group row">
+  <label for="example-email-input" class="col-xs-2 col-form-label">Email</label>
+  <div class="col-xs-10">
+    <input class="form-control" type="email" value="cinel@cinel.com" id="example-email-input">
+  </div>
+</div>
+
+<div class="form-group row">
+  <label for="example-password-input" class="col-xs-2 col-form-label">Password</label>
+  <div class="col-xs-10">
+    <input class="form-control" type="password" value="12356" id="example-password-input">
+  </div>
+</div>
+
+
+<div class="form-group row">
+  <label for="example-tel-input" class="col-xs-2 col-form-label">Telemóvel</label>
+  <div class="col-xs-10">
+    <input class="form-control" type="tel" value="96. ... ..." id="example-tel-input">
+  </div>
+</div>
+
+
+<div class="form-group row">
+  <label for="example-number-input" class="col-xs-2 col-form-label">Numero de aluno</label>
+  <div class="col-xs-10">
+    <input readonly class="form-control" type="number" value="14912" id="example-number-input">
+  </div>
+</div>
+
+
+
+<div class="form-group row">
+  <label for="example-date-input" class="col-xs-2 col-form-label">Data de Nascimento</label>
+  <div class="col-xs-10">
+    <input readonly class="form-control" type="date" value="17-02-1997" id="example-date-input">
+  </div>
+</div>
+ 		<button type="button" class="btn btn-success">Alterar</button> 
+ 		
+  
     </body>
 </html><!-- Meio-->
