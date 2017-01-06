@@ -7,8 +7,7 @@ $user= $_SESSION['username'];
 ?>
 <html>
 	<head>
-	<meta charset="ISO-8859-1"> 
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
 	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="aluno.css">
@@ -95,6 +94,7 @@ $user= $_SESSION['username'];
                     <a href="#"> <i class="	fa fa-unlink" aria-hidden="true"> </i> <span style="margin-left:10px;">UFCD'S</span> </a>
                 </li>
 
+
                    <li class="sidebar-brand">
                     
                         <a href="#menu-toggle"  id="menu-toggle" style="margin-top:20px;float:right;" > <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true" aria-hidden="true"></i> 
@@ -117,107 +117,45 @@ $user= $_SESSION['username'];
                 <div class="row">
                     <div class="col-lg-12">                    
 </a>  
-      		<h1> Teste a realizar  </h1>
-   		
-   		<table class="table table-inverse">
-		  <thead>
-		    <tr>
-		      <th>#</th>
-		      <th>Modulo</th>
-		      <th>Data</th>
-		      <th>Estado</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		    <tr>
-		      <th scope="row">1</th>
-		      <td>Integracao de sistemas</td>
-		      <td>#</td>
-		      <td>#</td>
-		    </tr>
-		    <tr>
-		      <th scope="row">2</th>
-		      <td>#</td>
-		      <td>20/12/2016</td>
-		      <td>#</td>
-		    </tr>
-		    <tr>
-		      <th scope="row">3</th>
-		      <td>#</td>
-		      <td>#</td>
-		      <td>Por fazer</td>
-		    </tr>
-		  </tbody>
+      		<h1> As minhas notas </h1>
+     
+	<table class="table table-inverse">
+		<thead>
+			<tr>
+				<th>UFCD</th>
+				<th>Teste</th>
+				<th>Nr do aluno</th>
+			</tr>
+			  </thead>
+				<tbody>
+			        <?php
+			        if (!isset($_SESSION))
+			        {
+			        	session_start();
+					}
+			            $conn=mysqli_connect("localhost","root","","proj");
+			            
+			            $instS='Select * from correccao';
+			            $query = mysqli_query($conn,$instS);
+			            while ($row = mysqli_fetch_assoc ($query))
+			            {
+			            	echo "<tr>";
+							echo " <th scope='row'></th>";
+						            echo "<td>".$row['idTeste']."</td>";
+						            echo "<td>".$row['NotaFinal']."</td>";
+									echo "<td>".$row['idAlunos']."</td>";
+			                echo"<td></td>";
+			                ?>
+			        	<?php echo "</tr>";
+			            }
+			        ?>       
+    			</tbody>
 	</table>
    
    
-	 		<button type="button" class="btn btn-success"> Fazer Teste </button> 
+   
+   
+ 		<button type="button" class="btn btn-success"></button> 
  		
-  
-       		<legend >1. Indique a(s) alternativa(s) correta(s) e incorreta(s).</legend>
-          		<div class="col-sm-10">
-            		<div class="form-check">
-            			<label class="form-check-label">
-            				<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-            				a)O "drive" e um periférico de entrada
-          				</label>
-        		</div>
-        			<div class="form-check">
-         		<label class="form-check-label">
-			            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-			            O "scanner" é um periférico so de saida
-          		</label>
-			</div>
-  			</div>
-  			
-  			<legend >2. Com relacao a Unidade Central de Processamento, julgue as afirmativas.</legend>
-          		<div class="col-sm-10">
-            		<div class="form-check">
-            			<label class="form-check-label">
-				            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-				            E composta exclusivamente pela Unidade deControle.
-          				</label>
-        			</div>
-        			<div class="form-check">
-	         			<label class="form-check-label">
-	            			<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-	            			E um dispositivo de entrada do computador
-	          			</label>
-					</div>
-  			</div>
-  			
-			<legend >3. Com relacao aos Perifericos de Entrada e Saida doComputador, responda</legend>
-          		<div class="col-sm-10">
-            		<div class="form-check">
-            			<label class="form-check-label">
-            				<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-            					O Scanner e um dispositivo que permite capturar imagens de um documento trazendo-as para o computador.
-          				</label>
-        			</div>
-        		<div class="form-check">
-	         		<label class="form-check-label">
-			        	    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-			        	    O Monitor de Video Touch Screen e um dispositivo unicamente de entrada
-	          		</label>
-				</div>
-  			</div>
-  			
-			<legend >4. Com relacao ao uso do teclado:</legend>
-          		<div class="col-sm-10">
-            		<div class="form-check">
-           				 <label class="form-check-label">
-				            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-				            a Tecla F1 no Word para Windows serve paraativar o programa de ajuda do Excel;
-          				</label>
-        		</div>
-        	<div class="form-check">
-	         	<label class="form-check-label">
-		            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-	           		 se for pressionada a tecla SHIFT em conjuntocom a letra a, sempre aparecera como resposta (a maiusculo);
-          		</label>
-			</div>
-  			</div>
-
-
     </body>
 </html><!-- Meio-->

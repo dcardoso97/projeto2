@@ -81,10 +81,13 @@ $user= $_SESSION['username'];
                     
                        </li>
                 <li>
-                    <a href="InserirFormador.php"><i class="fa fa-list-alt " aria-hidden="true"> </i> <span style="margin-left:10px;">Notas</span>  </a>
+                    <a href="IndexAluno.php"><i class="fa fa-list-alt " aria-hidden="true"> </i> <span style="margin-left:10px;">HOME</span>  </a>
+                </li>         
+                <li>
+                    <a href="ListarNotas.php"><i class="fa fa-list-alt " aria-hidden="true"> </i> <span style="margin-left:10px;">Notas</span>  </a>
                 </li>
                 <li>
-                    <a href="#"> <i class="	fa fa-list " aria-hidden="true"> </i> <span style="margin-left:10px;"> Testes</span> </a>
+                    <a href="IndexTestes.php"> <i class="	fa fa-list " aria-hidden="true"> </i> <span style="margin-left:10px;"> Testes</span> </a>
                 </li>
                 <li>
                     <a href="#"> <i class="fa fa-paste" aria-hidden="true"> </i> <span style="margin-left:10px;"> Avalia&ccedil;&otilde;es</span> </a>
@@ -92,6 +95,7 @@ $user= $_SESSION['username'];
                 <li>
                     <a href="#"> <i class="	fa fa-unlink" aria-hidden="true"> </i> <span style="margin-left:10px;">UFCD'S</span> </a>
                 </li>
+
 
                    <li class="sidebar-brand">
                     
@@ -116,54 +120,113 @@ $user= $_SESSION['username'];
                     <div class="col-lg-12">                    
 </a>  
    		<h1> Os meus dados </h1>
-   		
+    
    		<div class="form-group row">
-  <label for="example-text-input" class="col-xs-2 col-form-label">Username:</label>
-  <div class="col-xs-10">
-    <input readonly class="form-control" type="text" value="php" id="example-text-input">
-  </div>
-</div>
+		  <label for="example-text-input" class="col-xs-2 col-form-label">Username:</label>
+			  <div class="col-xs-10">
+			  	<?php
+			  		if (!isset($_SESSION))
+			        {
+			        	session_start();
+					}
+			            $conn=mysqli_connect("localhost","root","","proj");
+			            
+			            $instS='Select Nome from utilizador';
+			            $query = mysqli_query($conn,$instS);
+			            while ($row = mysqli_fetch_row ($query))
+						{
+							echo " <input readonly class='form-control' type='text' value=".$row[0]." id='example-text-input'>";
+						}
+			  	?>
+			  </div>
+		</div>
 
-<div class="form-group row">
-  <label for="example-email-input" class="col-xs-2 col-form-label">Email</label>
-  <div class="col-xs-10">
-    <input class="form-control" type="email" value="cinel@cinel.com" id="example-email-input">
-  </div>
-</div>
+		<div class="form-group row">
+		  <label for="example-date-input" class="col-xs-2 col-form-label">Data de Nascimento:</label>
+			  <div class="col-xs-10">
+			  		<?php
+				  		if (!isset($_SESSION))
+				        {
+				        	session_start();
+						}
+				            $conn=mysqli_connect("localhost","root","","proj");
+				            
+				            $instS='Select DataNascimento from utilizador';
+				            $query = mysqli_query($conn,$instS);
+				            while ($row = mysqli_fetch_row ($query))
+							{
+								echo " <input readonly class='form-control' type='date' value=".$row[0]." id='example-text-input'>";
+							}
+			  		?>
+			 </div>
+		</div>
+		
+		<div class="form-group row">
+		  <label for="example-email-input" class="col-xs-2 col-form-label">Email:</label>
+			  <div class="col-xs-10">
+			  	<?php
+			  		if (!isset($_SESSION))
+			        {
+			        	session_start();
+					}
+			            $conn=mysqli_connect("localhost","root","","proj");
+			            
+			            $instS='Select Email from utilizador';
+			            $query = mysqli_query($conn,$instS);
+			            while ($row = mysqli_fetch_row ($query))
+						{
+							echo " <input class='form-control' type='email' value=".$row[0]." id='example-text-input'>";
+						}		
+						?>
+			  </div>
+		</div>
 
-<div class="form-group row">
-  <label for="example-password-input" class="col-xs-2 col-form-label">Password</label>
-  <div class="col-xs-10">
-    <input class="form-control" type="password" value="12356" id="example-password-input">
-  </div>
-</div>
+		<div class="form-group row">
+		  <label for="example-text-input" class="col-xs-2 col-form-label">CC:</label>
+			  <div class="col-xs-10">
+			  	<?php
+			  		if (!isset($_SESSION))
+			        {
+			        	session_start();
+					}
+			            $conn=mysqli_connect("localhost","root","","proj");
+			            
+			            $instS='Select CC from utilizador';
+			            $query = mysqli_query($conn,$instS);
+			            while ($row = mysqli_fetch_row ($query))
+						{
+							echo " <input readonly class='form-control' type='text' value=".$row[0]." id='example-text-input'>";
+						}
+			  	?>
+			 	  
+			  </div>
+		</div>
+		
+		<div class="form-group row">
+		  <label for="example-number-input" class="col-xs-2 col-form-label">Tipo:</label>
+			  <div class="col-xs-10">
+				  	  	
+			  	  	<?php
+			  		if (!isset($_SESSION))
+			        {
+			        	session_start();
+					}
+			            $conn=mysqli_connect("localhost","root","","proj");
+			            
+			            $instS='Select Tipo from utilizador';
+			            $query = mysqli_query($conn,$instS);
+			            while ($row = mysqli_fetch_row ($query))
+						{
+							echo " <input readonly class='form-control' type='text' value=".$row[0]." id='example-text-input'>";
+						}
+			  		?>
+				   
+			
+			</div>
+		</div>
 
-
-<div class="form-group row">
-  <label for="example-tel-input" class="col-xs-2 col-form-label">Telemóvel</label>
-  <div class="col-xs-10">
-    <input class="form-control" type="tel" value="96. ... ..." id="example-tel-input">
-  </div>
-</div>
-
-
-<div class="form-group row">
-  <label for="example-number-input" class="col-xs-2 col-form-label">Numero de aluno</label>
-  <div class="col-xs-10">
-    <input readonly class="form-control" type="number" value="14912" id="example-number-input">
-  </div>
-</div>
-
-
-
-<div class="form-group row">
-  <label for="example-date-input" class="col-xs-2 col-form-label">Data de Nascimento</label>
-  <div class="col-xs-10">
-    <input readonly class="form-control" type="date" value="17-02-1997" id="example-date-input">
-  </div>
-</div>
  		<button type="button" class="btn btn-success">Alterar</button> 
- 		
+ 				
   
     </body>
 </html><!-- Meio-->
