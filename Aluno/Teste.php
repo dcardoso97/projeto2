@@ -7,7 +7,8 @@ $user= $_SESSION['username'];
 ?>
 <html>
 	<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="ISO-8859-1"> 
+
 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
 	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="aluno.css">
@@ -23,11 +24,9 @@ $user= $_SESSION['username'];
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<title>CINEL</title>
-
-	</head>
-
+</head>
 	<body>
-		
+		<form action="enviarteste.php" method="POST">	
 		  <nav class="navbar navbar-minha  navbar-fixed-top" role="navigation" style="margin-bottom: 0;">
 		  		<a class="navbar-brand" href="#">Alunos</a>
 		  		<div class="collapse navbar-collapse">
@@ -96,7 +95,6 @@ $user= $_SESSION['username'];
                     <a href="#"> <i class="	fa fa-unlink" aria-hidden="true"> </i> <span style="margin-left:10px;">UFCD'S</span> </a>
                 </li>
 
-
                    <li class="sidebar-brand">
                     
                         <a href="#menu-toggle"  id="menu-toggle" style="margin-top:20px;float:right;" > <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true" aria-hidden="true"></i> 
@@ -119,114 +117,71 @@ $user= $_SESSION['username'];
                 <div class="row">
                     <div class="col-lg-12">                    
 </a>  
-   		<h1> Os meus dados </h1>
-    
-   		<div class="form-group row">
-		  <label for="example-text-input" class="col-xs-2 col-form-label">Username:</label>
-			  <div class="col-xs-10">
-			  	<?php
-			  		if (!isset($_SESSION))
-			        {
-			        	session_start();
-					}
-			            $conn=mysqli_connect("localhost","root","","proj");
-			            
-			            $instS='Select Nome from utilizador';
-			            $query = mysqli_query($conn,$instS);
-			            while ($row = mysqli_fetch_row ($query))
-						{
-							echo " <input  style='width: 400px;'  readonly class='form-control' type='text' value=".$row[0]." id='example-text-input'>";
-						}
-			  	?>
-			  </div>
-		</div>
-
-		<div class="form-group row">
-		  <label for="example-date-input" class="col-xs-2 col-form-label">Data de Nascimento:</label>
-			  <div class="col-xs-10">
-			  		<?php
-				  		if (!isset($_SESSION))
-				        {
-				        	session_start();
-						}
-				            $conn=mysqli_connect("localhost","root","","proj");
-				            
-				            $instS='Select DataNascimento from utilizador';
-				            $query = mysqli_query($conn,$instS);
-				            while ($row = mysqli_fetch_row ($query))
-							{
-								echo " <input style='width: 400px;' readonly class='form-control' type='date' value=".$row[0]." id='example-text-input'>";
-							}
-			  		?>
-			 </div>
-		</div>
-		
-		<div class="form-group row">
-		  <label for="example-email-input" class="col-xs-2 col-form-label">Email:</label>
-			  <div class="col-xs-10">
-			  	<?php
-			  		if (!isset($_SESSION))
-			        {
-			        	session_start();
-					}
-			            $conn=mysqli_connect("localhost","root","","proj");
-			            
-			            $instS='Select Email from utilizador';
-			            $query = mysqli_query($conn,$instS);
-			            while ($row = mysqli_fetch_row ($query))
-						{
-							echo " <input   style='width: 400px;'  class='form-control' type='email' value=".$row[0]." id='example-text-input'>";
-						}		
-						?>
-			  </div>
-		</div>
-
-		<div class="form-group row">
-		  <label for="example-text-input" class="col-xs-2 col-form-label">CC:</label>
-			  <div class="col-xs-10">
-			  	<?php
-			  		if (!isset($_SESSION))
-			        {
-			        	session_start();
-					}
-			            $conn=mysqli_connect("localhost","root","","proj");
-			            
-			            $instS='Select CC from utilizador';
-			            $query = mysqli_query($conn,$instS);
-			            while ($row = mysqli_fetch_row ($query))
-						{
-							echo " <input  style='width: 400px;'  readonly class='form-control' type='text' value=".$row[0]." id='example-text-input'>";
-						}
-			  	?>
-			 	  
-			  </div>
-		</div>
-		
-		<div class="form-group row">
-		  <label for="example-number-input" class="col-xs-2 col-form-label">Tipo:</label>
-			  <div class="col-xs-10">
-				  	  	
-			  	  	<?php
-			  		if (!isset($_SESSION))
-			        {
-			        	session_start();
-					}
-			            $conn=mysqli_connect("localhost","root","","proj");
-			            
-			            $instS='Select Tipo from utilizador';
-			            $query = mysqli_query($conn,$instS);
-			            while ($row = mysqli_fetch_row ($query))
-						{
-							echo " <input  style='width: 400px;'  readonly class='form-control' type='text' value=".$row[0]." id='example-text-input'>";
-						}
-			  		?>
-				   
-			
-			</div>
-		</div>
-
- 		<button type="button" class="btn btn-success">Alterar</button> 
- 				
-  
-    </body>
+      		<h1> Criar Teste  </h1>
+      		<br>
+		   		<div class="form-group row">
+				  <label for="example-text-input" class="col-xs-2 col-form-label">Pergunta:</label>
+					  <div class="col-xs-10">
+							<input id="pergunta1" readonly style="width: 700px;" class='form-control' type='text' value="O responsavel por designar enderecos IP variaveis que possibilitam a navegacao na Web e o servidor de">
+					  </div>
+				</div>
+				<div class="form-group row">
+				  <label for="example-text-input" class="col-xs-2 col-form-label">Resposta:</label>
+					  <div class="col-xs-10">
+							  <input type="radio" name="reason"> HTTP<br>
+							  <input type="radio" name="reason"> HTML<br>
+							  <input type="radio" name="reason"> DHCP <br>
+							  <input type="radio" name="reason"> DNS <br>
+					  </div>
+				</div>
+				
+					<div class="form-group row">
+				  <label for="example-text-input" class="col-xs-2 col-form-label">Pergunta:</label>
+					  <div class="col-xs-10">
+							<input id="pergunta2"  readonly style="width: 500px;" class='form-control' type='text' value="Qual das assertivas NAO se encaixa na descricao de um hotspot" id='example-text-input'>
+					  </div>
+				</div>
+				<div class="form-group row">
+				  <label for="example-text-input" class="col-xs-2 col-form-label">Resposta:</label>
+					  <div class="col-xs-10">
+							  <input type="radio" name="reason"> Significa ponto-quente ou ponto-de-acesso <br>
+							  <input type="radio" name="reason"> Rede sem fio disponivel e com acesso a internet <br>
+							  <input type="radio" name="reason"> Disponivel para aparelhos wi-fi <br>
+							  <input type="radio" name="reason"> Funciona tambem com cabo <br>
+					  </div>
+				</div>
+				
+					<div class="form-group row">
+				  <label for="example-text-input" class="col-xs-2 col-form-label">Pergunta:</label>
+					  <div class="col-xs-10">
+							<input id="pergunta3" readonly style="width: 700px;" class='form-control' type='text' value="Assinale a opcao que contem exemplos somente de softwares de computador." id='example-text-input'>
+					  </div>
+				</div>
+				<div class="form-group row">
+				  <label for="example-text-input" class="col-xs-2 col-form-label">Resposta:</label>
+					  <div class="col-xs-10">
+							  <input type="radio" name="reason"> CPU, Word, Excel, MSN. <br>
+							  <input type="radio" name="reason"> PowerPoint, Word, Teclado, Mouse <br>
+							  <input type="radio" name="reason"> CPU, Monitor, Teclado, Mouse <br>
+							  <input type="radio" name="reason"> MSN, Word, Excel, PowerPoint <br>
+					  </div>
+				</div>
+				
+					<div class="form-group row">
+				  <label for="example-text-input" class="col-xs-2 col-form-label">Pergunta:</label>
+					  <div class="col-xs-10">
+							<input id="pergunta4"  readonly style="width: 700px;" class='form-control' type='text' value="Atualmente existem diversos navegadores de Internet utilizados pelos internautas, exceto" id='example-text-input'>
+					  </div>
+				</div>
+				<div class="form-group row">
+				  <label for="example-text-input" class="col-xs-2 col-form-label">Resposta:</label>
+					  <div class="col-xs-10">
+							  <input type="radio" name="reason"> Chrome <br>
+							  <input type="radio" name="reason"> PostGre <br>
+							  <input type="radio" name="reason"> Safari <br>
+							  <input type="radio" name="reason"> Mozilla Firefox <br>
+					  </div>
+				</div>
+			<button type="submit" id="button1id" name="button1id" class="btn btn-primary">Enviar</button> 
+	</body>
 </html><!-- Meio-->
