@@ -77,7 +77,8 @@ $user= $_SESSION['username'];
             <ul class="sidebar-nav" style="margin-left:0;">
                 <li class="sidebar-brand">
                     
-                       </li>
+                </li>
+                
                 <li>
                     <a href="IndexAluno.php"><i class="fa fa-list-alt " aria-hidden="true"> </i> <span style="margin-left:10px;">HOME</span>  </a>
                 </li>         

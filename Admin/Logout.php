@@ -1,6 +1,6 @@
 <?php
 if (!isset($_SESSION)){session_start();}
-$conn=mysqli_connect("localhost","root","","login");
+$conn=mysqli_connect("localhost","root","","proj");
 $_SESSION=array();
 if (ini_get("session.use_cookies")) {
     $params = session_get_cookie_params();
