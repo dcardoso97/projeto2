@@ -118,70 +118,8 @@ $user= $_SESSION['username'];
                     <div class="col-lg-12">                    
 </a>  
       		<h1> Criar Teste  </h1>
-      		<br>
-		   		<div class="form-group row">
-				  <label for="example-text-input" class="col-xs-2 col-form-label">Pergunta:</label>
-					  <div class="col-xs-10">
-							<input id="pergunta1" readonly style="width: 700px;" class='form-control' type='text' value="O responsavel por designar enderecos IP variaveis que possibilitam a navegacao na Web e o servidor de">
-					  </div>
-				</div>
-				<div class="form-group row">
-				  <label for="example-text-input" class="col-xs-2 col-form-label">Resposta:</label>
-					  <div class="col-xs-10">
-							  <input type="radio" name="reason"> HTTP<br>
-							  <input type="radio" name="reason"> HTML<br>
-							  <input type="radio" name="reason"> DHCP <br>
-							  <input type="radio" name="reason"> DNS <br>
-					  </div>
-				</div>
-				
-					<div class="form-group row">
-				  <label for="example-text-input" class="col-xs-2 col-form-label">Pergunta:</label>
-					  <div class="col-xs-10">
-							<input id="pergunta2"  readonly style="width: 500px;" class='form-control' type='text' value="Qual das assertivas NAO se encaixa na descricao de um hotspot" id='example-text-input'>
-					  </div>
-				</div>
-				<div class="form-group row">
-				  <label for="example-text-input" class="col-xs-2 col-form-label">Resposta:</label>
-					  <div class="col-xs-10">
-							  <input type="radio" name="reason"> Significa ponto-quente ou ponto-de-acesso <br>
-							  <input type="radio" name="reason"> Rede sem fio disponivel e com acesso a internet <br>
-							  <input type="radio" name="reason"> Disponivel para aparelhos wi-fi <br>
-							  <input type="radio" name="reason"> Funciona tambem com cabo <br>
-					  </div>
-				</div>
-				
-					<div class="form-group row">
-				  <label for="example-text-input" class="col-xs-2 col-form-label">Pergunta:</label>
-					  <div class="col-xs-10">
-							<input id="pergunta3" readonly style="width: 700px;" class='form-control' type='text' value="Assinale a opcao que contem exemplos somente de softwares de computador." id='example-text-input'>
-					  </div>
-				</div>
-				<div class="form-group row">
-				  <label for="example-text-input" class="col-xs-2 col-form-label">Resposta:</label>
-					  <div class="col-xs-10">
-							  <input type="radio" name="reason"> CPU, Word, Excel, MSN. <br>
-							  <input type="radio" name="reason"> PowerPoint, Word, Teclado, Mouse <br>
-							  <input type="radio" name="reason"> CPU, Monitor, Teclado, Mouse <br>
-							  <input type="radio" name="reason"> MSN, Word, Excel, PowerPoint <br>
-					  </div>
-				</div>
-				
-					<div class="form-group row">
-				  <label for="example-text-input" class="col-xs-2 col-form-label">Pergunta:</label>
-					  <div class="col-xs-10">
-							<input id="pergunta4"  readonly style="width: 700px;" class='form-control' type='text' value="Atualmente existem diversos navegadores de Internet utilizados pelos internautas, exceto" id='example-text-input'>
-					  </div>
-				</div>
-				<div class="form-group row">
-				  <label for="example-text-input" class="col-xs-2 col-form-label">Resposta:</label>
-					  <div class="col-xs-10">
-							  <input type="radio" name="reason"> Chrome <br>
-							  <input type="radio" name="reason"> PostGre <br>
-							  <input type="radio" name="reason"> Safari <br>
-							  <input type="radio" name="reason"> Mozilla Firefox <br>
-					  </div>
-				</div>
-			<button type="submit" id="button1id" name="button1id" class="btn btn-primary">Enviar</button> 
+      		
+			<button type="submit" id="button1id" name="button1id" class="btn btn-primary">Enviar</button>
+			 
 	</body>
 </html><!-- Meio-->

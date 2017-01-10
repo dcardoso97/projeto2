@@ -155,7 +155,7 @@ $user= $_SESSION['username'];
    
    
    
- 		<button type="button" class="btn btn-success"></button> 
+ 		<button type="button" class="btn btn-success" >Reclamar Nota</button> 
  		
     </body>
 </html><!-- Meio-->
