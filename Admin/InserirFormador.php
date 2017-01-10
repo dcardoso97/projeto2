@@ -9,8 +9,8 @@
 </head>
 
 <body >
-   
-    <div >
+		<center><h2>Inserir User</h2></center>
+
 <form method="POST" action="InserirFormadorDB.php">
     <label>Nome:</label>
     <input type="text" class="form-control"  name="nome"><br>
@@ -26,11 +26,9 @@
       <option value="Professor">Formador</option>
       <option value="Aluno">Formando</option>
     </select>
-    <input type="Submit" class="btn btn-success pull-right" value="Inserir">
+    <input type="Submit" onClick="return confirm('Deseja cotinuar?');" class="btn btn-success pull-right" value="Inserir">
 </form>
             
-  </div>              
-     
  
  
 </body>

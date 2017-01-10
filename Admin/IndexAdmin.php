@@ -94,18 +94,25 @@ if (!isset($_SESSION))
                     
                     
                 </li>
-                <li>
-                          <script>  
--                         function load_InserirFormadores() {
--                             $('#meio').load('InserirFormador.php');
--                         }
--                    </script>
-                    <a href="#" onclick="load_InserirFormadores() "><i class="fa fa-list-alt " aria-hidden="true"> </i> <span style="margin-left:10px;">Formadores</span>  </a>
+               
+                <li> 
+                	 <script>  
+                         function InserirFormadores() {
+                          $('#meio2').load('InserirFormador.php');
+								return false;
+                         }
+               </script>
+                    <a href="#" onclick="return InserirFormadores();"><i class="fa fa-list-alt " aria-hidden="true"> </i> <span style="margin-left:10px;">Inserir</span>  </a>
                 </li>
                 <li>
-                  
+              <script>  
+                         function Listar() {
+                          $('#meio2').load('Listar.php');
+								return false;
+                         }
+               </script>
                      
-                    <a href="#"> <i class="	fa fa-list " aria-hidden="true"> </i> <span style="margin-left:10px;"> Formandos</span> </a>
+                    <a href="#" onclick="return Listar();"> <i class="	fa fa-list " aria-hidden="true"> </i> <span style="margin-left:10px;"> Formandos</span> </a>
                 </li>
                 <li>
                     <a href="#"> <i class="fa fa-paste" aria-hidden="true"> </i> <span style="margin-left:10px;"> Avalia&ccedil;&otilde;es</span> </a>
@@ -113,13 +120,31 @@ if (!isset($_SESSION))
                 <li>
                     <a href="#"> <i class="	fa fa-unlink" aria-hidden="true"> </i> <span style="margin-left:10px;">Associar UFCD'S</span> </a>
                 </li>
+                <li>
+		               <script>  
+		                         function ListarUfcd() {
+		                          $('#meio2').load('ListaUfcds.php');
+										return false;
+		                         }
+		               </script>
+                    <a href="#" onclick="return ListarUfcd();"> <i class="	fa fa-unlink" aria-hidden="true"> </i> <span style="margin-left:10px;">Criar UFCD'S</span> </a>
+                </li>
+                <li>
+                	<script>  
+                         function ListarTurmas() {
+                          $('#meio2').load('ListaTurmas.php');
+								return false;
+                         }
+               </script> 
+                    <a href="#" onclick="return ListarTurmas();"> <i class="	fa fa-unlink" aria-hidden="true"> </i> <span style="margin-left:10px;">Criar turma</span> </a>
+                </li>
               
 
                    <li class="sidebar-brand">
                     
-                        <a href="#menu-toggle"  id="menu-toggle" style="margin-top:20px;float:right;" > <i class="fa fa-bars " style="font-size:20px !Important;" ></i> 
+                        <a href="#menu-toggle"  id="menu-toggle" style="margin-top:20px;float:right;" > <i class="fa fa-bars " style="font-size:20px !Important;" ></i> </a>  
                     
-                </li>
+                	</li>
 
             </ul>
         </div>
@@ -133,10 +158,12 @@ if (!isset($_SESSION))
     </script>
         <!-- Page Content -->
                          
-</a>  
+
                       
-                       <div id="meio1" style=" background-color:red;left:-5%;position:relative;width:100%;height:90%;margin:0 auto;" >
-                           <div class='container' id="meio" style=" position:relative;top:10%;width:100%;height:50%;"></div>
+                       <div id="meio12" style="left:-5%;position:relative;width:100%;height:90%;margin:0 auto;" >
+                           <div class='container' id="meio2" style="position:relative;top:10%;width:100%;height:50%;">
+                           	
+                           </div>
                        </div>
                        
           

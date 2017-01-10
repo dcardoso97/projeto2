@@ -1,11 +1,30 @@
 <?php 
 if (!isset($_SESSION))
 {
-     session_start();	 
+     session_start();	
+     $user =$_SESSION['username'];
 }
-$user= $_SESSION['username'];
 ?>
 <html>
+  <?php
+  if (empty($_SESSION['username'])){
+      header("Location:..\index2.php");
+  }
+  
+  if (empty($_SESSION['mensagem']))
+  {   
+  }
+  else
+      {
+  ?>
+        <div id="mensagem" class="alert alert-info" style="float:right;width:20%;">
+        <strong>Info!</strong> <?php echo $_SESSION['mensagem'];?>
+        </div>
+    <?php
+    }
+    ?>
+
+
 	<head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
@@ -21,9 +40,9 @@ $user= $_SESSION['username'];
 	</head>
 
 	<body>
-		
+            <div class="container">
 		  <nav class="navbar navbar-minha  navbar-fixed-top" role="navigation" style="margin-bottom: 0;">
-		  		<a class="navbar-brand" href="#">Administrador</a>
+		  		<a class="navbar-brand" href="#">CINEL</a>
 		  		<div class="collapse navbar-collapse">
 			  		<ul class="nav navbar-nav navbar-right">
 	                <li class="dropdown">
@@ -76,9 +95,16 @@ $user= $_SESSION['username'];
                     
                 </li>
                 <li>
-                    <a href="InserirFormador.php"><i class="fa fa-list-alt " aria-hidden="true"> </i> <span style="margin-left:10px;">Formadores</span>  </a>
+                          <script>  
+-                         function load_InserirFormadores() {
+-                             $('#meio').load('InserirFormador.php');
+-                         }
+-                    </script>
+                    <a href="#" onclick="load_InserirFormadores() "><i class="fa fa-list-alt " aria-hidden="true"> </i> <span style="margin-left:10px;">Formadores</span>  </a>
                 </li>
                 <li>
+                  
+                     
                     <a href="#"> <i class="	fa fa-list " aria-hidden="true"> </i> <span style="margin-left:10px;"> Formandos</span> </a>
                 </li>
                 <li>
@@ -91,7 +117,7 @@ $user= $_SESSION['username'];
 
                    <li class="sidebar-brand">
                     
-                        <a href="#menu-toggle"  id="menu-toggle" style="margin-top:20px;float:right;" > <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true" aria-hidden="true"></i> 
+                        <a href="#menu-toggle"  id="menu-toggle" style="margin-top:20px;float:right;" > <i class="fa fa-bars " style="font-size:20px !Important;" ></i> 
                     
                 </li>
 
@@ -106,13 +132,15 @@ $user= $_SESSION['username'];
     });
     </script>
         <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">                    
+                         
 </a>  
-   
-       
+                      
+                       <div id="meio1" style=" background-color:red;left:-5%;position:relative;width:100%;height:90%;margin:0 auto;" >
+                           <div class='container' id="meio" style=" position:relative;top:10%;width:100%;height:50%;"></div>
+                       </div>
+                       
+          
 
     </body>
+
 </html><!-- Meio-->

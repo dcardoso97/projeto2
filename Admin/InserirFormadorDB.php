@@ -20,8 +20,14 @@ if (!isset($_SESSION)){session_start();}
         $inst3="Select idUtilizador from utilizador where Nome='".$nome."'";
         $result0=mysqli_query($conn,$inst3);
         $result1=mysqli_fetch_row($result0);
-        $inst2="Insert into professor values ('".$result1[0]."','".$nome."')";   
-        $result0=mysqli_query($conn,$inst2);    
+		if ($tipo=="Professor"){
+		$inst2="Insert into professor values ('".$result1[0]."','".$nome."')";   
+       	
+		}else if($tipo=="Aluno"){
+			$inst2="Insert into alunos values ('".$result1[0]."','".$nome."')"; 
+			
+		}
+		$result0=mysqli_query($conn,$inst2) ; 
         $inslogin="Insert into login values ('$result1[0]','".$email."','".$nident."','Sim')"; 
         $result0=mysqli_query($conn,$inslogin);
         $_SESSION['mensagem'] ="Formador inserido no sistema";

@@ -3,7 +3,7 @@ if (!isset($_SESSION))
 {
      session_start();	 
 }
-$user= $_SESSION['username'];
+$user= $_SESSION['Nome'];
 ?>
 <html>
 	<head>
@@ -27,9 +27,9 @@ $user= $_SESSION['username'];
 	</head>
 
 	<body>
-		
+            <div class="container">
 		  <nav class="navbar navbar-minha  navbar-fixed-top" role="navigation" style="margin-bottom: 0;">
-		  		<a class="navbar-brand" href="#">Alunos</a>
+		  		<a class="navbar-brand" href="#">ALUNO</a>
 		  		<div class="collapse navbar-collapse">
 			  		<ul class="nav navbar-nav navbar-right">
 	                <li class="dropdown">
@@ -75,11 +75,12 @@ $user= $_SESSION['username'];
            </nav>
 		 <div id="wrapper">
 		 	   
-		 	 <div id="sidebar-wrapper">
+		  <div id="sidebar-wrapper">
             <ul class="sidebar-nav" style="margin-left:0;">
                 <li class="sidebar-brand">
                     
-                       </li>
+                    
+                </li>
                 <li>
                     <a href="IndexAluno.php"><i class="fa fa-list-alt " aria-hidden="true"> </i> <span style="margin-left:10px;">HOME</span>  </a>
                 </li>         
@@ -95,7 +96,6 @@ $user= $_SESSION['username'];
                 <li>
                     <a href="#"> <i class="	fa fa-unlink" aria-hidden="true"> </i> <span style="margin-left:10px;">UFCD'S</span> </a>
                 </li>
-
 
                    <li class="sidebar-brand">
                     
@@ -114,13 +114,11 @@ $user= $_SESSION['username'];
     });
     </script>
         <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">                    
+                         
 </a>  
+        <br><br>  <br><br>
    		<h1> Os meus dados </h1>
-    
+     	 <br><br>
    		<div class="form-group row">
 		  <label for="example-text-input" class="col-xs-2 col-form-label">Username:</label>
 			  <div class="col-xs-10">

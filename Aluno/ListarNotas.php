@@ -3,7 +3,7 @@ if (!isset($_SESSION))
 {
      session_start();	 
 }
-$user= $_SESSION['username'];
+$user= $_SESSION['Nome'];
 ?>
 <html>
 	<head>
@@ -23,11 +23,13 @@ $user= $_SESSION['username'];
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<title>CINEL</title>
-</head>
+
+	</head>
+
 	<body>
-		
+            <div class="container">
 		  <nav class="navbar navbar-minha  navbar-fixed-top" role="navigation" style="margin-bottom: 0;">
-		  		<a class="navbar-brand" href="#">Alunos</a>
+		  		<a class="navbar-brand" href="#">ALUNO</a>
 		  		<div class="collapse navbar-collapse">
 			  		<ul class="nav navbar-nav navbar-right">
 	                <li class="dropdown">
@@ -73,12 +75,12 @@ $user= $_SESSION['username'];
            </nav>
 		 <div id="wrapper">
 		 	   
-		 	 <div id="sidebar-wrapper">
+		  <div id="sidebar-wrapper">
             <ul class="sidebar-nav" style="margin-left:0;">
                 <li class="sidebar-brand">
                     
+                    
                 </li>
-                
                 <li>
                     <a href="IndexAluno.php"><i class="fa fa-list-alt " aria-hidden="true"> </i> <span style="margin-left:10px;">HOME</span>  </a>
                 </li>         
@@ -89,18 +91,15 @@ $user= $_SESSION['username'];
                     <a href="IndexTestes.php"> <i class="	fa fa-list " aria-hidden="true"> </i> <span style="margin-left:10px;"> Testes</span> </a>
                 </li>
                 <li>
-                    <a href="#"> <i class="fa fa-paste" aria-hidden="true"> </i> <span style="margin-left:10px;"> Avalia&ccedil;&otilde;es</span> </a>
+                    <a href="Teste.php"> <i class="fa fa-paste" aria-hidden="true"> </i> <span style="margin-left:10px;"> Avalia&ccedil;&otilde;es</span> </a>
                 </li>
                 <li>
                     <a href="#"> <i class="	fa fa-unlink" aria-hidden="true"> </i> <span style="margin-left:10px;">UFCD'S</span> </a>
                 </li>
 
-
                    <li class="sidebar-brand">
-                    
                         <a href="#menu-toggle"  id="menu-toggle" style="margin-top:20px;float:right;" > <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true" aria-hidden="true"></i> 
-                    
-                </li>
+                   </li>
 
             </ul>
         </div>

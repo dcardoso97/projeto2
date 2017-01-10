@@ -16,6 +16,7 @@
 	<body>	
 		
 	<div id="ecra" class="ecra">
+            
 			<div class="jumbotron">
 				<?php
 					if (isset($logout_message)) 
@@ -86,5 +87,6 @@
              
 		</div>
    </div>
+        
 	</body>
 </html>
