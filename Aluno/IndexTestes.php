@@ -117,10 +117,11 @@ $user= $_SESSION['username'];
                 <div class="row">
                     <div class="col-lg-12">                    
 </a>  
-      		<h1> Teste a realizar  </h1>
+      		<center><h1> Teste a realizar  </h1></center>
+      		<br>							<br>
    		
-   		<table class="table table-inverse">
-		  <thead>
+   		<table class="table table-hover">
+   		  <thead>
 		    <tr>
 		      <th>#</th>
 		      <th>Modulo</th>
@@ -149,8 +150,12 @@ $user= $_SESSION['username'];
 		    </tr>
 		  </tbody>
 	</table>
-   
-   
+                   </div>
+            </div>
+        
+    </div>
+
+   <!-- asd
 	 		<button type="button" class="btn btn-success"> Fazer Teste </button> 
  		
   
@@ -218,6 +223,6 @@ $user= $_SESSION['username'];
 			</div>
   			</div>
 
-
+-->
     </body>
 </html><!-- Meio-->
