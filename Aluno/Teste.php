@@ -120,7 +120,7 @@ $user= $_SESSION['username'];
       		<center><h1> Teste </h1></center>
       		<br>							<br>
    		
-		
+		<form method="POST">
 	        <?php
 			        if (!isset($_SESSION))
 			        {
@@ -130,111 +130,50 @@ $user= $_SESSION['username'];
 			            
 			            $instS='Select * from perguntas';
 			            $query = mysqli_query($conn,$instS);
-						$resposta = 'idResposta';
+						
 			            while ($row = mysqli_fetch_assoc ($query))
-			            {
-			            	echo"<fieldset style='border:solid;'>";
+			            {echo"<br>";
+			            	echo"<center><fieldset style='border:solid; width:500px;'>";
 							
-			            	echo" <legend>Questão: ".$row['idPergunta']."";echo"</legend>";
+			            	echo" <legend style='background: #FF9; width:150px; border: solid 1px black; 
+			            	-webkit-border-radius: 8px; -moz-border-radius: 8px; 
+			            	border-radius: 8px; padding: 6px;'> Questão: ".$row['idPergunta']."";echo"</legend>";
 
-						    echo " <h4><b> Pergunta: </h4></b>".$row['textoPerguntas']."";
+						    echo "<center> <h4><b> Pergunta: </h4></center></b>";
 							
-						    echo " <br>";    
-						    						    
-						   	echo " <h4><b> Resposta: </h4></b>";
+						    echo"<center>"
+						    	.$row['textoPerguntas'].""; //Buscar a pergunta a base de dados
+						    echo"<center>";
+								    
+						   	echo " <center><h4><b> Resposta: </h4></center></b>";
 						   	
-							echo " <input type='radio' name='gridRadios' id='gridRadios2'> 2015 "; echo "<br>";
-							echo " <input type='radio' name='gridRadios' id='gridRadios2'> 2016"; echo "<br>";
-							echo " <input type='radio' name='gridRadios' id='gridRadios2'> 2017 "; echo "<br>";
-						   	
+							echo " <center><input type='radio' name='gridRadios' id='resposta'></center> "; echo "<br>";
+
 						    echo "<br>"; 
-						   
-						   if ($resposta <> '2017')
+						 
+						 /*  
+						   if ( $row['idResposta'] ==v )
 						   {
-					   			echo"";
-						   }
+					   			echo "<script>
+								window.location.href='admin/ahm/panel';
+								alert('There are no fields to generate a report');
+								</script>";
+						  	}
 							//echo "".$row['RespostaCorrecta']."";
-							
+							*/
 							
 			                ?>
+			               
 			                
-			        	<?php echo "</fieldset>";
+			        	<?php echo "</fieldset></center>";
 			            }
 			        ?>
 			
   			 </div>
             </div>
-       <a class="btn btn-default glyphicon glyphicon-ok" href="#"></a> 
+          <center> <a class="btn btn-default glyphicon glyphicon-ok" type="submit" href="#">Enviar</a></center>
+       <!--  <a class="btn btn-default glyphicon glyphicon-ok" href="#"></a> --> 
     </div>
-
-   <!-- asd
-	 		<button type="button" class="btn btn-success"> Fazer Teste </button> 
- 		
-  
-       		<legend >1. Indique a(s) alternativa(s) correta(s) e incorreta(s).</legend>
-          		<div class="col-sm-10">
-            		<div class="form-check">
-            			<label class="form-check-label">
-            				<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-            				a)O "drive" e um perifÃ©rico de entrada
-          				</label>
-        		</div>
-        			<div class="form-check">
-         		<label class="form-check-label">
-			            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-			            O "scanner" Ã© um perifÃ©rico so de saida
-          		</label>
-			</div>
-  			</div>
-  			
-  			<legend >2. Com relacao a Unidade Central de Processamento, julgue as afirmativas.</legend>
-          		<div class="col-sm-10">
-            		<div class="form-check">
-            			<label class="form-check-label">
-				            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-				            E composta exclusivamente pela Unidade deControle.
-          				</label>
-        			</div>
-        			<div class="form-check">
-	         			<label class="form-check-label">
-	            			<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-	            			E um dispositivo de entrada do computador
-	          			</label>
-					</div>
-  			</div>
-  			
-			<legend >3. Com relacao aos Perifericos de Entrada e Saida doComputador, responda</legend>
-          		<div class="col-sm-10">
-            		<div class="form-check">
-            			<label class="form-check-label">
-            				<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-            					O Scanner e um dispositivo que permite capturar imagens de um documento trazendo-as para o computador.
-          				</label>
-        			</div>
-        		<div class="form-check">
-	         		<label class="form-check-label">
-			        	    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-			        	    O Monitor de Video Touch Screen e um dispositivo unicamente de entrada
-	          		</label>
-				</div>
-  			</div>
-  			
-			<legend >4. Com relacao ao uso do teclado:</legend>
-          		<div class="col-sm-10">
-            		<div class="form-check">
-           				 <label class="form-check-label">
-				            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-				            a Tecla F1 no Word para Windows serve paraativar o programa de ajuda do Excel;
-          				</label>
-        		</div>
-        	<div class="form-check">
-	         	<label class="form-check-label">
-		            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-	           		 se for pressionada a tecla SHIFT em conjuntocom a letra a, sempre aparecera como resposta (a maiusculo);
-          		</label>
-			</div>
-  			</div>
-
--->
+</form>
     </body>
 </html><!-- Meio-->

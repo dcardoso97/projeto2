@@ -144,12 +144,13 @@ $user= $_SESSION['username'];
 			            while ($row = mysqli_fetch_assoc ($query))
 			            {
 			            	echo "<tr>";
-							echo " <th scope='row'></th>";
-						            echo "<td>".$row['idTeste']."</td>";
+			            	echo"<td><input type='radio'></td>";
+									echo "<td>".$row['idTeste']."</td>";
 						            echo "<td>".$row['idTurma']."</td>";
 									echo "<td>".$row['HorasInicio']."</td>";
 									echo "<td>".$row['HorasFim']."</td>";
 									echo "<td>".$row['Data']."</td>";
+								
 			                echo"<td></td>";
 			                ?>
 			        	<?php echo "</tr>";
