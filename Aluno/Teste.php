@@ -26,7 +26,7 @@ $user= $_SESSION['username'];
 	<title>CINEL</title>
 </head>
 	<body>
-		<form action="enviarteste.php" method="POST">	
+		
 		  <nav class="navbar navbar-minha  navbar-fixed-top" role="navigation" style="margin-bottom: 0;">
 		  		<a class="navbar-brand" href="#">Alunos</a>
 		  		<div class="collapse navbar-collapse">
@@ -89,7 +89,7 @@ $user= $_SESSION['username'];
                     <a href="IndexTestes.php"> <i class="	fa fa-list " aria-hidden="true"> </i> <span style="margin-left:10px;"> Testes</span> </a>
                 </li>
                 <li>
-                    <a href="Teste.php"> <i class="fa fa-paste" aria-hidden="true"> </i> <span style="margin-left:10px;"> Avalia&ccedil;&otilde;es</span> </a>
+                    <a href="#"> <i class="fa fa-paste" aria-hidden="true"> </i> <span style="margin-left:10px;"> Avalia&ccedil;&otilde;es</span> </a>
                 </li>
                 <li>
                     <a href="#"> <i class="	fa fa-unlink" aria-hidden="true"> </i> <span style="margin-left:10px;">UFCD'S</span> </a>
@@ -117,9 +117,124 @@ $user= $_SESSION['username'];
                 <div class="row">
                     <div class="col-lg-12">                    
 </a>  
-      		<h1> Criar Teste  </h1>
-      		
-			<button type="submit" id="button1id" name="button1id" class="btn btn-primary">Enviar</button>
-			 
-	</body>
+      		<center><h1> Teste </h1></center>
+      		<br>							<br>
+   		
+		
+	        <?php
+			        if (!isset($_SESSION))
+			        {
+			        	session_start();
+					}
+			            $conn=mysqli_connect("localhost","root","","proj");
+			            
+			            $instS='Select * from perguntas';
+			            $query = mysqli_query($conn,$instS);
+						$resposta = 'idResposta';
+			            while ($row = mysqli_fetch_assoc ($query))
+			            {
+			            	echo"<fieldset style='border:solid;'>";
+							
+			            	echo" <legend>Questão: ".$row['idPergunta']."";echo"</legend>";
+
+						    echo " <h4><b> Pergunta: </h4></b>".$row['textoPerguntas']."";
+							
+						    echo " <br>";    
+						    						    
+						   	echo " <h4><b> Resposta: </h4></b>";
+						   	
+							echo " <input type='radio' name='gridRadios' id='gridRadios2'> 2015 "; echo "<br>";
+							echo " <input type='radio' name='gridRadios' id='gridRadios2'> 2016"; echo "<br>";
+							echo " <input type='radio' name='gridRadios' id='gridRadios2'> 2017 "; echo "<br>";
+						   	
+						    echo "<br>"; 
+						   
+						   if ($resposta <> '2017')
+						   {
+					   			echo"";
+						   }
+							//echo "".$row['RespostaCorrecta']."";
+							
+							
+			                ?>
+			                
+			        	<?php echo "</fieldset>";
+			            }
+			        ?>
+			
+  			 </div>
+            </div>
+       <a class="btn btn-default glyphicon glyphicon-ok" href="#"></a> 
+    </div>
+
+   <!-- asd
+	 		<button type="button" class="btn btn-success"> Fazer Teste </button> 
+ 		
+  
+       		<legend >1. Indique a(s) alternativa(s) correta(s) e incorreta(s).</legend>
+          		<div class="col-sm-10">
+            		<div class="form-check">
+            			<label class="form-check-label">
+            				<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+            				a)O "drive" e um perifÃ©rico de entrada
+          				</label>
+        		</div>
+        			<div class="form-check">
+         		<label class="form-check-label">
+			            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+			            O "scanner" Ã© um perifÃ©rico so de saida
+          		</label>
+			</div>
+  			</div>
+  			
+  			<legend >2. Com relacao a Unidade Central de Processamento, julgue as afirmativas.</legend>
+          		<div class="col-sm-10">
+            		<div class="form-check">
+            			<label class="form-check-label">
+				            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+				            E composta exclusivamente pela Unidade deControle.
+          				</label>
+        			</div>
+        			<div class="form-check">
+	         			<label class="form-check-label">
+	            			<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+	            			E um dispositivo de entrada do computador
+	          			</label>
+					</div>
+  			</div>
+  			
+			<legend >3. Com relacao aos Perifericos de Entrada e Saida doComputador, responda</legend>
+          		<div class="col-sm-10">
+            		<div class="form-check">
+            			<label class="form-check-label">
+            				<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+            					O Scanner e um dispositivo que permite capturar imagens de um documento trazendo-as para o computador.
+          				</label>
+        			</div>
+        		<div class="form-check">
+	         		<label class="form-check-label">
+			        	    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+			        	    O Monitor de Video Touch Screen e um dispositivo unicamente de entrada
+	          		</label>
+				</div>
+  			</div>
+  			
+			<legend >4. Com relacao ao uso do teclado:</legend>
+          		<div class="col-sm-10">
+            		<div class="form-check">
+           				 <label class="form-check-label">
+				            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+				            a Tecla F1 no Word para Windows serve paraativar o programa de ajuda do Excel;
+          				</label>
+        		</div>
+        	<div class="form-check">
+	         	<label class="form-check-label">
+		            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+	           		 se for pressionada a tecla SHIFT em conjuntocom a letra a, sempre aparecera como resposta (a maiusculo);
+          		</label>
+			</div>
+  			</div>
+
+-->
+    </body>
 </html><!-- Meio-->

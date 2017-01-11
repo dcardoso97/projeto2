@@ -117,42 +117,50 @@ $user= $_SESSION['username'];
                 <div class="row">
                     <div class="col-lg-12">                    
 </a>  
-      		<center><h1> Teste a realizar  </h1></center>
+      		<center><h1> Testes </h1></center>
       		<br>							<br>
    		
    		<table class="table table-hover">
    		  <thead>
 		    <tr>
 		      <th>#</th>
-		      <th>Modulo</th>
+		      <th>Teste</th>
+		      <th>Turma</th>
+		      <th>Horas Inico</th>
+		      <th>Horas fim</th>
 		      <th>Data</th>
-		      <th>Estado</th>
 		    </tr>
 		  </thead>
 		  <tbody>
-		    <tr>
-		      <th scope="row">1</th>
-		      <td>Integracao de sistemas</td>
-		      <td>#</td>
-		      <td>#</td>
-		    </tr>
-		    <tr>
-		      <th scope="row">2</th>
-		      <td>#</td>
-		      <td>20/12/2016</td>
-		      <td>#</td>
-		    </tr>
-		    <tr>
-		      <th scope="row">3</th>
-		      <td>#</td>
-		      <td>#</td>
-		      <td>Por fazer</td>
-		    </tr>
+	        <?php
+			        if (!isset($_SESSION))
+			        {
+			        	session_start();
+					}
+			            $conn=mysqli_connect("localhost","root","","proj");
+			            
+			            $instS='Select * from teste_turma';
+			            $query = mysqli_query($conn,$instS);
+			            while ($row = mysqli_fetch_assoc ($query))
+			            {
+			            	echo "<tr>";
+							echo " <th scope='row'></th>";
+						            echo "<td>".$row['idTeste']."</td>";
+						            echo "<td>".$row['idTurma']."</td>";
+									echo "<td>".$row['HorasInicio']."</td>";
+									echo "<td>".$row['HorasFim']."</td>";
+									echo "<td>".$row['Data']."</td>";
+			                echo"<td></td>";
+			                ?>
+			        	<?php echo "</tr>";
+			            }
+			        ?>
 		  </tbody>
 	</table>
                    </div>
             </div>
-        
+      <a class="btn btn-default glyphicon glyphicon-refresh" href="IndexTestes.php"></a>
+      <a class="btn btn-default glyphicon glyphicon-pencil" href="Teste.php"></a>
     </div>
 
    <!-- asd
