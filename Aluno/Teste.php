@@ -176,7 +176,7 @@ $user= $_SESSION['username'];
 							    <menu>
 							    	 
 							            <?php echo "R: ".$row['RespostaCorrecta'].""?>  
-							        <center><input type='radio' name="<?php echo "menu".$i; ?>" id='resposta4'> <?php echo".$row['RespostaCorrecta'].";?></center>;
+							       <!-- <center><input type='radio' name="<?php echo "menu".$i; ?>" id='resposta4'> <?php echo".$row['RespostaCorrecta'].";?></center>;-->
 							  		<input type="radio" name="<?php echo "menu".$i; ?>" value=".$row['RespostaErrada1']."/> 
 							  		<input type="radio" name="<?php echo "menu".$i; ?>" value=".$row['RespostaErrada2']."/> 
 							  		<input type="radio" name="<?php echo "menu".$i; ?>" value=".$row['RespostaErrada3']."/> 
