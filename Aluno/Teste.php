@@ -117,8 +117,29 @@ $user= $_SESSION['username'];
                 <div class="row">
                     <div class="col-lg-12">                    
 </a>  
-      		<center><h1> Teste </h1></center>
-      		<br>							<br>
+
+	
+			<?php 
+				if (!isset($_SESSION))
+			        {
+			        	session_start();
+					}
+			            $conn=mysqli_connect("localhost","root","","proj");
+			            
+			            $instS='Select * from ufcd';
+			            $query = mysqli_query($conn,$instS);
+						
+			            while ($row = mysqli_fetch_assoc ($query))
+			            {
+			            echo"<br>";				
+						echo "<center>
+								<h1> Teste de ".$row['Nome']."</h1>	
+							  </center>";
+						}
+				
+			?>
+      		
+      		<br><br>
    		
 		<form method="POST">
 	        <?php
@@ -146,21 +167,22 @@ $user= $_SESSION['username'];
 						    echo"<center>";
 								    
 						   	echo " <center><h4><b> Resposta: </h4></center></b>";
-						   	
-							echo " <center><input type='radio' name='gridRadios' id='resposta'></center> "; echo "<br>";
-
+							
+						   	echo "<menu>";
+							?>
+								<menuitem type='radio' label='Left' radiogroup='grupo<?php echo $row['idPergunta'] ;?>' ></menuitem>
+							<?php
+								echo "<center><input type='radio' name='gridRadios' id='resposta1'>".$row['RespostaCorrecta']."</center> ";
+								echo "<center><input type='radio' name='gridRadios' id='resposta2'>".$row['RespostaErrada1']."</center> ";
+								echo "<center><input type='radio' name='gridRadios' id='resposta3'>".$row['RespostaErrada2']."</center> ";
+								echo "<center><input type='radio' name='gridRadios' id='resposta4'>".$row['RespostaErrada3']."</center> ";
+							echo "</menu>";
+							
+							
+							
+							echo "<br>";
 						    echo "<br>"; 
-						 
-						 /*  
-						   if ( $row['idResposta'] ==v )
-						   {
-					   			echo "<script>
-								window.location.href='admin/ahm/panel';
-								alert('There are no fields to generate a report');
-								</script>";
-						  	}
-							//echo "".$row['RespostaCorrecta']."";
-							*/
+						
 							
 			                ?>
 			               
@@ -175,5 +197,11 @@ $user= $_SESSION['username'];
        <!--  <a class="btn btn-default glyphicon glyphicon-ok" href="#"></a> --> 
     </div>
 </form>
+<menu>
+<menuitem type="radio" label="Left" radiogroup="alignment" onclick="setAlign('left')">Left</menuitem>
+<center><input type='radio' name='gridRadios' id='resposta'>"f</center>
+<center><input type='radio' name='gridRadios' id='resposta'>"f</center>
+<center><input type='radio' name='gridRadios' id='resposta'>"f</center>
+</menu>
     </body>
 </html><!-- Meio-->

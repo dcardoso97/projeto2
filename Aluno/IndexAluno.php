@@ -4,6 +4,9 @@ if (!isset($_SESSION))
      session_start();	 
 }
 $user= $_SESSION['Nome'];
+
+$conn=mysqli_connect("localhost","root","","proj");
+			            
 ?>
 <html>
 	<head>
@@ -123,11 +126,7 @@ $user= $_SESSION['Nome'];
 		  <label for="example-text-input" class="col-xs-2 col-form-label">Username:</label>
 			  <div class="col-xs-10">
 			  	<?php
-			  		if (!isset($_SESSION))
-			        {
-			        	session_start();
-					}
-			            $conn=mysqli_connect("localhost","root","","proj");
+
 			            
 			            $instS='Select Nome from utilizador';
 			            $query = mysqli_query($conn,$instS);
@@ -143,13 +142,7 @@ $user= $_SESSION['Nome'];
 		  <label for="example-date-input" class="col-xs-2 col-form-label">Data de Nascimento:</label>
 			  <div class="col-xs-10">
 			  		<?php
-				  		if (!isset($_SESSION))
-				        {
-				        	session_start();
-						}
-				            $conn=mysqli_connect("localhost","root","","proj");
-				            
-				            $instS='Select DataNascimento from utilizador';
+						 $instS='Select DataNascimento from utilizador';
 				            $query = mysqli_query($conn,$instS);
 				            while ($row = mysqli_fetch_row ($query))
 							{
@@ -163,12 +156,7 @@ $user= $_SESSION['Nome'];
 		  <label for="example-email-input" class="col-xs-2 col-form-label">Email:</label>
 			  <div class="col-xs-10">
 			  	<?php
-			  		if (!isset($_SESSION))
-			        {
-			        	session_start();
-					}
-			            $conn=mysqli_connect("localhost","root","","proj");
-			            
+			           
 			            $instS='Select Email from utilizador';
 			            $query = mysqli_query($conn,$instS);
 			            while ($row = mysqli_fetch_row ($query))
@@ -183,12 +171,7 @@ $user= $_SESSION['Nome'];
 		  <label for="example-text-input" class="col-xs-2 col-form-label">CC:</label>
 			  <div class="col-xs-10">
 			  	<?php
-			  		if (!isset($_SESSION))
-			        {
-			        	session_start();
-					}
-			            $conn=mysqli_connect("localhost","root","","proj");
-			            
+
 			            $instS='Select CC from utilizador';
 			            $query = mysqli_query($conn,$instS);
 			            while ($row = mysqli_fetch_row ($query))
@@ -205,12 +188,7 @@ $user= $_SESSION['Nome'];
 			  <div class="col-xs-10">
 				  	  	
 			  	  	<?php
-			  		if (!isset($_SESSION))
-			        {
-			        	session_start();
-					}
-			            $conn=mysqli_connect("localhost","root","","proj");
-			            
+
 			            $instS='Select Tipo from utilizador';
 			            $query = mysqli_query($conn,$instS);
 			            while ($row = mysqli_fetch_row ($query))
