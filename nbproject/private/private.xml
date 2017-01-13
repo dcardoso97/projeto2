@@ -5,12 +5,23 @@
         <group>
             <file>file:/C:/xampp/htdocs/proj/index2.php</file>
             <file>file:/C:/xampp/htdocs/proj/alterar.php</file>
-            <file>file:/C:/xampp/htdocs/proj/Admin/Logout.php</file>
+            <file>file:/C:/xampp/htdocs/proj/Admin/InserirUFCDBD.php</file>
+            <file>file:/C:/xampp/htdocs/proj/Admin/ListaUfcds.php</file>
+            <file>file:/C:/xampp/htdocs/proj/Admin/InserirUFCD.php</file>
+            <file>file:/C:/xampp/htdocs/proj/Admin/ListaTurmas.php</file>
+            <file>file:/C:/xampp/htdocs/proj/Admin/deleterowT.php</file>
+            <file>file:/C:/xampp/htdocs/proj/Admin/InserirTurmaBD.php</file>
+            <file>file:/C:/xampp/htdocs/proj/Admin/AssocBD.php</file>
             <file>file:/C:/xampp/htdocs/proj/Admin/admin.css</file>
-            <file>file:/C:/xampp/htdocs/proj/UserandPassword.php</file>
             <file>file:/C:/xampp/htdocs/proj/ValidaLogin.php</file>
-            <file>file:/C:/xampp/htdocs/proj/Admin/InserirFormadorDB.php</file>
+            <file>file:/C:/xampp/htdocs/proj/Admin/Listar.php</file>
+            <file>file:/C:/xampp/htdocs/proj/Admin/InserirTurma.php</file>
+            <file>file:/C:/xampp/htdocs/proj/Admin/AssocAT.php</file>
+            <file>file:/C:/xampp/htdocs/proj/Admin/Assoc.php</file>
             <file>file:/C:/xampp/htdocs/proj/Admin/IndexAdmin.php</file>
+            <file>file:/C:/xampp/htdocs/proj/Admin/Info_Pessoa.php</file>
+            <file>file:/C:/xampp/htdocs/proj/Admin/Logout.php</file>
+            <file>file:/C:/xampp/htdocs/proj/Formador/IndexFormador.php</file>
         </group>
     </open-files>
 </project-private>

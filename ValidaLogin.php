@@ -21,8 +21,19 @@ if (!isset($_SESSION)){session_start();}
                        
                     }else{
                        
-                        header("Location:Admin/IndexAdmin.php");
+                        $var="Select * from utilizador where idUtilizador='".$result[0]."'";
+                         $query=mysqli_query($conn,$var);
+                         $result2= mysqli_fetch_row($query);
+                         if ($result2[5]=="Administrador"){
+                             header("Location:Admin/IndexAdmin.php");
+                         }else  if ($result2[5]=="Aluno"){
+                             header("Location:Aluno/IndexAluno.php");
+                         } if ($result2[5]=="Professor"){
+                             header("Location:Formador/IndexFormador.php");
+                         }
+                       
                     }
+                    
 			
                 
 

@@ -22,17 +22,16 @@
         <tr>
         <th><b>Id</b></th>
         <th><b>Nome</b></th>
-        <th>Duracao</th>
-        <th></th>
+        <th><b>Duracao</b></th>
         <!-- Add Turma -->
                     <script>     
                     function load_ufcd(){
-                    document.getElementById("divufcd").innerHTML='<object width="100%" height="100%" type="text/html" data="InserirTurma.php"></object>';}
+                    document.getElementById("divufcd").innerHTML='<object width="100%" height="100%" type="text/html" data="InserirUFCD.php"></object>';}
                     </script>
                     <!-- Load Turma -->
-        <th><center><a data-toggle="modal" href="#myModal" onclick="load_turmas()" ><span class="glyphicon glyphicon-plus"></span></a></center></th>
+        <th><center><a d href="#" data-target="#myModal2" data-toggle="modal" onclick="load_ufcd()" ><span class="glyphicon glyphicon-plus"></span></a></center></th>
   
-        <tr>
+        </tr>
     </thead>
     <tbody>
         <?php
@@ -45,31 +44,34 @@
             echo "<tr>";
             echo "<td>".$row[0]."</td> ";
             echo "<td>".$row[1]."</td>";
-                echo"<td></td>";
                 ?>
                 <td></td>
                 <td></td>
-                <td> <a onClick="return confirm('Tem a certeza que deseja prosseguir?');" href="deleteinstrutor.php?id=<?php echo $row[0]; ?>"><span class='glyphicon glyphicon-remove' style='color:#D00000'> </span></a></td>
+                <td><a onClick="return confirm('Tem a certeza que deseja prosseguir?');" href="deleterowU.php?id=<?php echo $row[0];?>"> <button class='glyphicon glyphicon-remove' style='color:red;background-color:transparent;border: none;' ></button></a></td>
 
         <?php echo "</tr>";
             }
-        
         ?>
     </tbody>
   </table>
-  	 	      <!-- Modal -->
-  <div class="modal fade" id="myModal" >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <b><center><h4 class="modal-title">Criar Ufcd</h4></center></b>
-        </div>
-        <div id="divturmas" class="modal-body" >
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Adicionar Ufcd</h4>
+      </div>
+        <div id="divufcd" class="modal-body" style="height:50%;">
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>
  

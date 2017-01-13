@@ -9,76 +9,34 @@
 </head>
 
 <body>
-<div class="container" style="position: relative; left:6%">
-   <div class="row">
-    <div class="col-lg-9">
-            <div class="panel-body">
-               
-                <div class="page-header">
-                       <div class="header">
-                        <div class="table-responsive">
-  <table class="table table-hover">
+    <br>
+<center><h2>Utilizadores</h2></center>
+    <div class="container">
+  <table class="table table-responsive">
     <thead>
         <tr>
         <th><b>Id</b></th>
         <th><b>Nome</b></th>
-        <th></th>
-        <th></th>
-        <!-- Add Instrutor -->
-                    <script>     
-                    function load_instrutor(){
-                    document.getElementById("divinstrutor").innerHTML='<object width="100%" height="100%" type="text/html" data="InscricaoInstrutor.html"></object>';}
-                    </script>
-                    <!-- Load Produto -->
-       <!-- abrir no modal <th><center><a data-toggle="modal" href="#myModal" onclick="load_instrutor()" ><span class="glyphicon glyphicon-plus"></span></a></center></th>-->
-        <!-- Modal -->
-  <div class="modal fade" id="myModal" >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <b><center><h4 class="modal-title">Contratar Instrutor</h4></center></b>
-        </div>
-        <div id="divinstrutor" class="modal-body" style="height:90%;">
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
-  
-        <tr>
+        </tr>
     </thead>
     <tbody>
         <?php
-        if (!isset($_SESSION)){session_start();}
-            $conn=mysqli_connect("localhost","root","","proj");
-            
-            $instS="Select idProfessor,NomeProfessor from professor";
-            $query = mysqli_query($conn,$instS);
+            if (!isset($_SESSION)){session_start();}
+                $conn=mysqli_connect("localhost","root","","proj");
+                $instS="Select idProfessor,NomeProfessor from professor";
+                $query = mysqli_query($conn,$instS);
             while ($row = mysqli_fetch_row ($query)){
-            echo "<tr>";
-            echo "<td>".$row[0]."</td> ";
-            echo "<td>".$row[1]."</td>";
-                echo"<td></td>";
-                ?>
-                <td> <a onClick="return confirm('Tem a certeza que deseja prosseguir?');" href="deleteinstrutor.php?id=<?php echo $row[0]; ?>"><span class='glyphicon glyphicon-remove' style='color:#D00000'> </span></a></td>
-                <td><a data-toggle="modal" href="#mymodal"><span class='glyphicon glyphicon-user' style='color:#707070'> </span></a></td>
-
-        <?php echo "</tr>";
-            }
-        
+                echo "<tr>";
+                echo "<td>".$row[0]."</td> ";
+                echo "<td>".$row[1]."</td>";
+          ?>
+                <td><button class='glyphicon glyphicon-remove' style='color:red;background-color:transparent;border: none;'  onClick="return confirm('Tem a certeza que deseja prosseguir?');" href="deleteinstrutor.php?id=<?php echo $row[0]; ?>"></button></td>
+                <td><button data-toggle="modal" href="#mymodal" class='glyphicon glyphicon-user' style='background-color:transparent;border: none;'></button></td>
+        <?php 
+                echo "</tr>";}    
         ?>
     </tbody>
   </table>
-</div>
- 
-                </div>
-            </div>
-        
-    </div>
-    
-   </div> 
-</div>
-
-
+        </div>
 </body>
 </html>

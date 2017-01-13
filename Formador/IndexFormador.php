@@ -32,7 +32,6 @@ if (!isset($_SESSION))
         <link rel="stylesheet" href="admin.css">
 	<link rel="stylesheet" href="navbar.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
 	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	<title>CINEL</title>
 
@@ -42,7 +41,7 @@ if (!isset($_SESSION))
     overflow-x: hidden;">
             <div class="container" style="margin-left:15%;">
 		  <nav class="navbar navbar-minha  navbar-fixed-top" role="navigation" style="margin-bottom: 0;">
-		  		<a class="navbar-brand" href="IndexAdmin.php">CINEL</a>
+		  		<a class="navbar-brand" href="IndexFormador.php">CINEL</a>
 		  		<div class="collapse navbar-collapse"style="margin-top:1%;">
 			  		<ul class="nav navbar-nav navbar-right"style="margin-right: 0%;">
                                             <img src="http://placehold.it/18x18" class="profile-image img-circle"/><font style="color:white;"> <?php echo $user;?> </font><b class="caret"></b>
@@ -66,7 +65,7 @@ if (!isset($_SESSION))
 					return false;				
                          }
                </script>
-                    <a href="#" onclick="return InserirFormadores();"><i class="fa fa-list-alt " aria-hidden="true"> </i> <span style="margin-left:10px;">Inserir</span>  </a>
+                    <a href="#" onclick="return InserirFormadores();"><i class="fa fa-list-alt " aria-hidden="true"> </i> <span style="margin-left:10px;">Criar Teste</span>  </a>
                 </li>
                 <li>
               <script>  
@@ -76,7 +75,7 @@ if (!isset($_SESSION))
                          }
                </script>
                      
-                    <a href="#" onclick="return Listar();"> <i class="	fa fa-list " aria-hidden="true"> </i> <span style="margin-left:10px;"> Formandos</span> </a>
+                    <a href="#" onclick="return Listar();"> <i class="	fa fa-list " aria-hidden="true"> </i> <span style="margin-left:10px;"> Criar Pergunta</span> </a>
                 </li>
                 
                 <li>     <script>  
@@ -85,7 +84,7 @@ if (!isset($_SESSION))
 				return false;					
                          }
                         </script>
-                    <a href="#" onclick="return AssocAT();"> <i class="fa fa-paste" aria-hidden="true"> </i> <span style="margin-left:10px;">Alunos/Turma</span> </a>
+                    <a href="#" onclick="return AssocAT();"> <i class="fa fa-paste" aria-hidden="true"> </i> <span style="margin-left:10px;">Teste/Pergunta</span> </a>
                 </li>
                 <li>
                             <script>  
@@ -135,18 +134,23 @@ if (!isset($_SESSION))
     });
     </script>
         <!-- Page Content -->
-             <div id="meio12"  style="left:-5%;position:relative;width:100%;height:100%;margin:0 auto;" >
-                   <div class='container' id="meio2" style="position:relative;top:10%;width:100%;height:50%;">
- 	              	<?php $conn=mysqli_connect("localhost","root","","proj");
+                         
+
+                      
+                       <div id="meio12"  style="left:-5%;position:relative;width:100%;height:100%;margin:0 auto;" >
+                           <div class='container' id="meio2" style="position:relative;top:10%;width:100%;height:50%;">
+                           	<?php $conn=mysqli_connect("localhost","root","","proj");
 			            $inst1="Select idUtilizador from login where Username='".$_SESSION['username']."'";
 			            $query = mysqli_query($conn,$inst1);
-                         $row = mysqli_fetch_row ($query);
-                         $inst2="Select * from utilizador where idUtilizador='$row[0]'";
-                         $query = mysqli_query($conn,$inst2);
-                         $row = mysqli_fetch_row ($query);                
-                	?>
+                                    $row = mysqli_fetch_row ($query);
+                                    $inst2="Select * from utilizador where idUtilizador='$row[0]'";
+                                   $query = mysqli_query($conn,$inst2);
+                                   $row = mysqli_fetch_row ($query);
+                                    
+                                    ?>
                            <!--cod page-->
-        <center>   <h1 style="margin-right: 15%;"> Os meus dados </h1>
+                           <center>
+                               <h1 style="margin-right: 15%;"> Os meus dados </h1>
      	 <br><br>
          		<div class="form-group row">
 			  <div class="col-xs-10">

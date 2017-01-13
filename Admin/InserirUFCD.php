@@ -12,7 +12,7 @@
 <script>
 $(document).ready(function () {
   //called when key is pressed in textbox
-  $("#inserir").keypress(function (e) {
+  $("#input").keypress(function (e) {
      //if the letter is not digit then display error and don't type anything
      if (e.which !== 8 && e.which !== 0 && (e.which < 48 || e.which > 57)) {
         //display error message
@@ -31,13 +31,14 @@ $(document).ready(function () {
         <div class="panel-body">
             <div class="form-group">
                 <div class="header">
-					<form method="POST" action="InserirTurmaBD.php">
-                                            <label>Designa &cedil; &atilde;o da turma:</label>
-						<input type="text" class="form-control" PlaceHolder="Inserir designacao da turma" name="nome"><br>
+					<form method="POST" action="InserirUFCDBD.php">
+                                            <label>UFCD</label>
+						<input type="text" class="form-control" PlaceHolder="Inserir designacao da ufcd" name="ufcd"><br>
 						<br>
-						<input id="inserir" type="Submit" class="btn btn-primary pull-right" value="Inserir" >
-                	
-                                        </form>
+                                                <input type="number" class="form-control" PlaceHolder="Inserir horas da ufcd" name="tempo"><br>
+						<br>
+						<input type="Submit" id="input" class="btn btn-success pull-right" value="Inserir" >
+                	</form>
                 </div>
            </div>
         </div>

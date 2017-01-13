@@ -1,11 +1,10 @@
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="padding.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 </head>
 
 <body> 
@@ -30,7 +29,7 @@
                     document.getElementById("divturmas").innerHTML='<object width="100%" height="100%" type="text/html" data="InserirTurma.php"></object>';}
                     </script>
                     <!-- Load Turma -->
-        <th><center><a data-toggle="modal" href="#myModal" onclick="load_turmas()" ><span class="glyphicon glyphicon-plus"></span></a></center></th>
+        <th><center><a   data-toggle="modal" data-target="#myModal" onclick="load_turmas()" ><span class="glyphicon glyphicon-plus"></span></a></center></th>
   
         <tr>
     </thead>
@@ -41,15 +40,15 @@
             
             $instS="Select idTurma,DesignacaoTurma from turmas";
             $query = mysqli_query($conn,$instS);
-            while ($row = mysqli_fetch_row ($query)){
+            while ($row = mysqli_fetch_array ($query)){
             echo "<tr>";
-            echo "<td>".$row[0]."</td> ";
-            echo "<td>".$row[1]."</td>";
+            echo "<td>".$row['idTurma']."</td> ";
+            echo "<td>".$row['DesignacaoTurma']."</td>";
                 echo"<td></td>";
                 ?>
                 <td></td>
                 <td></td>
-                <td> <a onClick="return confirm('Tem a certeza que deseja prosseguir?');" href="deleteinstrutor.php?id=<?php echo $row[0]; ?>"><span class='glyphicon glyphicon-remove' style='color:#D00000'> </span></a></td>
+                <td><a onClick="return confirm('Tem a certeza que deseja prosseguir?');" href="deleterowT.php?id=<?php echo $row['idTurma'];?>"> <button class='glyphicon glyphicon-remove' style='color:red;background-color:transparent;border: none;' ></button></a></td>
 
         <?php echo "</tr>";
             }
@@ -57,19 +56,7 @@
         ?>
     </tbody>
   </table>
-  	 	      <!-- Modal -->
-  <div class="modal fade" id="myModal" >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <b><center><h4 class="modal-title">Criar Turma</h4></center></b>
-        </div>
-        <div id="divturmas" class="modal-body" >
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+
 
 </div>
  
@@ -82,6 +69,22 @@
 </div>
 
 
-
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Adicionar Turma</h4>
+      </div>
+        <div id="divturmas" class="modal-body" style="height:50%;">
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>

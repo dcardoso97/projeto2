@@ -33,7 +33,7 @@ $conn=mysqli_connect("localhost","root","","proj");
 	                <li class="dropdown">
 	                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 	                        
-	                     
+	                        	
 	                        <span class="glyphicon glyphicon-chevron-down"></span>
 	                    </a>
 	                    <ul class="dropdown-menu">
@@ -114,24 +114,13 @@ $conn=mysqli_connect("localhost","root","","proj");
         <!-- Page Content -->
                          
 </a>  
-	<form action="AlterarAluno.php" method="POST">	  	
-			  	<?php
-			  			$instS='Select idUtilizador from utilizador';
-			            $query = mysqli_query($conn,$instS);
-			            while ($row = mysqli_fetch_assoc ($query))
-						{
-							$id = $row['idUtilizador'];
-							echo "<input type='hidden' name='idUtilizador' value='$id'>" ;
-						}			
-						
-			  	?>
+	<form action="AlterarAluno.php" method="POST">
         <br><br>
    		<center><h1> Os meus dados </h1></center>
      	 <br><br>
    		<div class="form-group row">
 		  <label for="example-text-input" class="col-xs-2 col-form-label">Username:</label>
 			  <div class="col-xs-10">
-
 			  	<?php
 
 			            
@@ -163,15 +152,14 @@ $conn=mysqli_connect("localhost","root","","proj");
 		  <label for="example-email-input" class="col-xs-2 col-form-label">Email:</label>
 			  <div class="col-xs-10">
 			  	<?php
-						
-			            $instS='Select Email from utilizador';
-			            $query = mysqli_query($conn,$instS);
-			            while ($row = mysqli_fetch_row ($query))
-						{
-
-						echo " <input style='width: 400px;' class='form-control' type='email' value=".$row[0]." id='email' name='email'>";
-						}					
-				?>
+	
+						 $instS='Select Email from utilizador';
+				            $query = mysqli_query($conn,$instS);
+				            while ($row = mysqli_fetch_row ($query))
+							{
+								echo " <input style='width: 400px;' class='form-control' type='email' value=".$row[0]." id='email' name='email'>";
+							}
+			  		?>
 			  </div>
 		</div>
 
@@ -210,7 +198,7 @@ $conn=mysqli_connect("localhost","root","","proj");
 		</div>
 		
  		<button type="submit" class="btn btn-success">Alterar</button> 
- 	</form>	
+ 			</form>	
   
     </body>
 </html><!-- Meio-->
