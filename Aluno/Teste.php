@@ -166,31 +166,23 @@ $user= $_SESSION['username'];
 						    	.$row['textoPerguntas'].""; //Buscar a pergunta a base de dados
 						    echo"<center>";
 								    
-						   	echo " <center><h4><b> Resposta: </h4></center></b>";
+						   	echo "<center><h4><b> Resposta: </h4></center></b>";
+							
+							echo "<input type='radio' name='dd' id='resposta'>";
+								
+							$resposta = 'insert into Resposta from aluno_teste';
 							
 							
+														
+							echo "<br>";
+							echo "<br>"; 
+														
 							?>
-							
-							<?php 
-							  for ($i=1; $i<=$row['idPergunta']; $i++) { ?>
-							    <menu>
-							    	 
-							            <?php echo "R: ".$row['RespostaCorrecta'].""?>  
-							       <!-- <center><input type='radio' name="<?php echo "menu".$i; ?>" id='resposta4'> <?php echo".$row['RespostaCorrecta'].";?></center>;-->
-							  		<input type="radio" name="<?php echo "menu".$i; ?>" value=".$row['RespostaErrada1']."/> 
-							  		<input type="radio" name="<?php echo "menu".$i; ?>" value=".$row['RespostaErrada2']."/> 
-							  		<input type="radio" name="<?php echo "menu".$i; ?>" value=".$row['RespostaErrada3']."/> 
-							    
-							    </menu>
-						<?php
-								}	
-;								echo "<br>";
-								echo "<br>"; 
-							?>
-
-			        	<?php echo "</fieldset></center>";
-			            }
-			        ?>
+						 	
+						 	<?php 
+						 		echo "</fieldset></center>";
+			            		}
+			        		?>
 			
   			 </div>
             </div>
