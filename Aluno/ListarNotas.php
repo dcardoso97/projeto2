@@ -117,14 +117,14 @@ $user= $_SESSION['Nome'];
                 <div class="row">
                     <div class="col-lg-12">                    
 </a>  
-      		<h1> As minhas notas </h1>
-     
+  		<center><h1> As minhas notas </h1></center>
+     <br><br>
 	<table class="table table-inverse">
 		<thead>
 			<tr>
 				<th>UFCD</th>
-				<th>Teste</th>
-				<th>Nr do aluno</th>
+				<th>Nota</th>
+				
 			</tr>
 			  </thead>
 				<tbody>
@@ -134,16 +134,22 @@ $user= $_SESSION['Nome'];
 			        	session_start();
 					}
 			            $conn=mysqli_connect("localhost","root","","proj");
-			            
-			            $instS='Select * from correccao';
+						
+						$instA='Select * from ufcd';
+						$queryS = mysqli_query($conn,$instA);
+						
+						while ($row = mysqli_fetch_assoc ($queryS))
+			            {
+							echo "<tr>";
+							echo "<td>".$row['Nome']."</td>";
+						}
+						
+						$instS='Select * from correccao';
 			            $query = mysqli_query($conn,$instS);
 			            while ($row = mysqli_fetch_assoc ($query))
 			            {
-			            	echo "<tr>";
-							echo " <th scope='row'></th>";
-						            echo "<td>".$row['idTeste']."</td>";
-						            echo "<td>".$row['NotaFinal']."</td>";
-									echo "<td>".$row['idAlunos']."</td>";
+			            
+							echo "<td>".$row['NotaFinal']."</td>";
 			                echo"<td></td>";
 			                ?>
 			        	<?php echo "</tr>";
@@ -151,11 +157,6 @@ $user= $_SESSION['Nome'];
 			        ?>       
     			</tbody>
 	</table>
-   
-   
-   
-   
- 		<button type="button" class="btn btn-success" >Reclamar Nota</button> 
- 		
+
     </body>
 </html><!-- Meio-->

@@ -135,18 +135,23 @@ if (!isset($_SESSION))
     });
     </script>
         <!-- Page Content -->
-             <div id="meio12"  style="left:-5%;position:relative;width:100%;height:100%;margin:0 auto;" >
-                   <div class='container' id="meio2" style="position:relative;top:10%;width:100%;height:50%;">
- 	              	<?php $conn=mysqli_connect("localhost","root","","proj");
+                         
+
+                      
+                       <div id="meio12"  style="left:-5%;position:relative;width:100%;height:100%;margin:0 auto;" >
+                           <div class='container' id="meio2" style="position:relative;top:10%;width:100%;height:50%;">
+                           	<?php $conn=mysqli_connect("localhost","root","","proj");
 			            $inst1="Select idUtilizador from login where Username='".$_SESSION['username']."'";
 			            $query = mysqli_query($conn,$inst1);
-                         $row = mysqli_fetch_row ($query);
-                         $inst2="Select * from utilizador where idUtilizador='$row[0]'";
-                         $query = mysqli_query($conn,$inst2);
-                         $row = mysqli_fetch_row ($query);                
-                	?>
+                                    $row = mysqli_fetch_row ($query);
+                                    $inst2="Select * from utilizador where idUtilizador='$row[0]'";
+                                   $query = mysqli_query($conn,$inst2);
+                                   $row = mysqli_fetch_row ($query);
+                                    
+                                    ?>
                            <!--cod page-->
-        <center>   <h1 style="margin-right: 15%;"> Os meus dados </h1>
+                           <center>
+                               <h1 style="margin-right: 15%;"> Os meus dados </h1>
      	 <br><br>
          		<div class="form-group row">
 			  <div class="col-xs-10">
@@ -198,9 +203,7 @@ if (!isset($_SESSION))
 			  </div>
 		</div>
 		
-
- 		<button type="button" class="btn btn-success">Alterar</button></center>
-                           <!--/cod page-->        
+                          <!--/cod page-->        
                            </div><!--fecha div do meio -->
                        </div>
                  </div>

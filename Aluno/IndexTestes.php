@@ -4,6 +4,8 @@ if (!isset($_SESSION))
      session_start();	 
 }
 $user= $_SESSION['username'];
+
+			            $conn=mysqli_connect("localhost","root","","proj");
 ?>
 <html>
 	<head>
@@ -117,7 +119,14 @@ $user= $_SESSION['username'];
                 <div class="row">
                     <div class="col-lg-12">                    
 </a>  
-      		<center><h1> Testes </h1></center>
+      		<center><h1> Testes <?php 
+      		 $instS='Select * from turmas';
+			            $query = mysqli_query($conn,$instS);
+			            while ($row = mysqli_fetch_assoc ($query))
+			            {
+							echo" da turma ".$row['DesignacaoTurma']."";     		
+						}
+      		 ?></h1></center>
       		<br>							<br>
    		
    		<table class="table table-hover">
@@ -133,18 +142,17 @@ $user= $_SESSION['username'];
 		  </thead>
 		  <tbody>
 	        <?php
-			        if (!isset($_SESSION))
-			        {
-			        	session_start();
-					}
-			            $conn=mysqli_connect("localhost","root","","proj");
-			            
+			       
 			            $instS='Select * from teste_turma';
 			            $query = mysqli_query($conn,$instS);
 			            while ($row = mysqli_fetch_assoc ($query))
 			            {
-			            	echo "<tr>";
-			            	echo"<td><input type='radio'></td>";
+			            
+							if('idTeste' > 1)
+							{
+								echo "<tr>";
+			            		echo"<td><a i href='Teste.php' class='btn btn-default glyphicon glyphicon-pencil'></a></td>";
+							}
 									echo "<td>".$row['idTeste']."</td>";
 						            echo "<td>".$row['idTurma']."</td>";
 									echo "<td>".$row['HorasInicio']."</td>";
@@ -161,7 +169,7 @@ $user= $_SESSION['username'];
                    </div>
             </div>
       <a class="btn btn-default glyphicon glyphicon-refresh" href="IndexTestes.php"></a>
-      <a class="btn btn-default glyphicon glyphicon-pencil" href="Teste.php"></a>
+      <a " href="Teste.php"></a>
     </div>
 
    <!-- asd

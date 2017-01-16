@@ -39,21 +39,21 @@
                  	<div class="thumbnail">
                 		<img src="img/img1.png">
                         <caption><center><h3>Diogo Cardoso</h3></center></caption>
-                        <p>asdnasndas</p>
+                        <p>Aluno</p>
                 	</div>
             	</div>
                 <div class="col-sm-6 col-md-4" style="background-color:transparant;">
                  	<div class="thumbnail">
                 		<img src="img/img1.png">
                         <caption><center><h3>Malam Djassi</h3></center></caption>
-                         <p>asdnasndas</p>
+                         <p>Aluno</p>
                 	</div>
             	</div>
                 	<div class="col-sm-6 col-md-4" style="background-color:transparant;">
                  	<div class="thumbnail">
                 		<img src="img/img1.png">
                 		<caption><center><h3>Odacil Paulo</h3></center></caption>
-                         <p>asdnasndas</p>
+                         <p>Aluno</p>
                     </div>
             		</div>
                 </div>	

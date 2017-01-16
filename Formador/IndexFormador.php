@@ -60,58 +60,52 @@ if (!isset($_SESSION))
                
                 <li> 
                 	 <script>  
-                         function InserirFormadores() {
-                          $('#meio2').load('InserirUser.php');
+                         function CriarTeste() {
+                          $('#meio2').load('CriarTeste.php');
 					return false;				
                          }
                </script>
-                    <a href="#" onclick="return InserirFormadores();"><i class="fa fa-list-alt " aria-hidden="true"> </i> <span style="margin-left:10px;">Criar Teste</span>  </a>
+                    <a href="#" onclick="return CriarTeste();"><i class="fa fa-list-alt " aria-hidden="true"> </i> <span style="margin-left:10px;">Criar Teste</span>  </a>
                 </li>
                 <li>
               <script>  
-                         function Listar() {
-                          $('#meio2').load('Listar.php');
+                         function Pergunta() {
+                          $('#meio2').load('Pergunta.php');
 				return false;					
                          }
                </script>
                      
-                    <a href="#" onclick="return Listar();"> <i class="	fa fa-list " aria-hidden="true"> </i> <span style="margin-left:10px;"> Criar Pergunta</span> </a>
+                    <a href="#" onclick="return Pergunta();"> <i class="	fa fa-list " aria-hidden="true"> </i> <span style="margin-left:10px;"> Criar Pergunta</span> </a>
                 </li>
                 
                 <li>     <script>  
-                         function AssocAT() {
-                          $('#meio2').load('AssocAT.php');
+                         function AssocTestePergunta() {
+                          $('#meio2').load('AssocTestePergunta.php');
 				return false;					
                          }
                         </script>
-                    <a href="#" onclick="return AssocAT();"> <i class="fa fa-paste" aria-hidden="true"> </i> <span style="margin-left:10px;">Teste/Pergunta</span> </a>
+                    <a href="#" onclick="return AssocTestePergunta();"> <i class="fa fa-paste" aria-hidden="true"> </i> <span style="margin-left:10px;">Teste/Pergunta</span> </a>
                 </li>
-                <li>
-                            <script>  
-                         function Assoc() {
-                          $('#meio2').load('Assoc.php');
-				return false;					
-                         }
-               </script>
-                    <a href="#" onclick="return Assoc();"> <i class="	fa fa-unlink" aria-hidden="true"> </i> <span style="margin-left:10px;">UFCD'S/Turma</span> </a>
-                </li>
-                <li>
-		               <script>  
-		                         function ListarUfcd() {
-		                          $('#meio2').load('ListaUfcds.php');
-						return false;				
-		                         }
-		               </script>
-                    <a href="#" onclick="return ListarUfcd();"> <i class="	fa fa-unlink" aria-hidden="true"> </i> <span style="margin-left:10px;">Criar UFCD'S</span> </a>
-                </li>
+
+
                 <li>
                 	<script>  
-                         function ListarTurmas() {
+                         function VerTurmas() {
                           $('#meio2').load('ListaTurmas.php');
 				return false;					
                          }
                </script> 
-                    <a href="#" onclick="return ListarTurmas();"> <i class="	fa fa-unlink" aria-hidden="true"> </i> <span style="margin-left:10px;">Criar turma</span> </a>
+                    <a href="#" onclick="return VerTurmas();"> <i class="	fa fa-unlink" aria-hidden="true"> </i> <span style="margin-left:10px;">Turmas</span> </a>
+                </li>
+                
+                 <li>
+                	<script>  
+                         function AssocTesteTurma() {
+                          $('#meio2').load('AssocTesteTurma.php');
+				return false;					
+                         }
+               </script> 
+                    <a href="#" onclick="return AssocTesteTurma();"> <i class="	fa fa-unlink" aria-hidden="true"> </i> <span style="margin-left:10px;">Teste/Turma</span> </a>
                 </li>
               
 

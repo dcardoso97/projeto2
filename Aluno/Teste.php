@@ -3,6 +3,8 @@ if (!isset($_SESSION))
 {
      session_start();	 
 }
+
+$conn=mysqli_connect("localhost","root","","proj");
 $user= $_SESSION['username'];
 ?>
 <html>
@@ -120,12 +122,7 @@ $user= $_SESSION['username'];
 
 	
 			<?php 
-				if (!isset($_SESSION))
-			        {
-			        	session_start();
-					}
-			            $conn=mysqli_connect("localhost","root","","proj");
-			            
+		            
 			            $instS='Select * from ufcd';
 			            $query = mysqli_query($conn,$instS);
 						
@@ -139,15 +136,10 @@ $user= $_SESSION['username'];
 				
 			?>
       		
-      		<br><br>
+      		<br>
    		
-		<form method="POST">
+		<form action="EnviarRespostas.php" method="POST">
 	        <?php
-			        if (!isset($_SESSION))
-			        {
-			        	session_start();
-					}
-			            $conn=mysqli_connect("localhost","root","","proj");
 			            
 			            $instS='Select * from perguntas';
 			            $query = mysqli_query($conn,$instS);
@@ -158,26 +150,39 @@ $user= $_SESSION['username'];
 							
 			            	echo" <legend style='background: #FF9; width:150px; border: solid 1px black; 
 			            	-webkit-border-radius: 8px; -moz-border-radius: 8px; 
-			            	border-radius: 8px; padding: 6px;'> Questão: ".$row['idPergunta']."";echo"</legend>";
+			            	border-radius: 8px; padding: 6px;'> Questão: ".$row['idPergunta']."";
+			            	echo"</legend>";
 
 						    echo "<center> <h4><b> Pergunta: </h4></center></b>";
 							
 						    echo"<center>"
 						    	.$row['textoPerguntas'].""; //Buscar a pergunta a base de dados
 						    echo"<center>";
-								    
-						   	echo "<center><h4><b> Resposta: </h4></center></b>";
+							   
+						   	echo " <br>";    
+						    						    
+ 						   	echo " <h4><b> Resposta: </h4></b>";
 							
-							echo "<input type='radio' name='dd' id='resposta'>";
-								
-							$resposta = 'insert into Resposta from aluno_teste';
-							
-							
-														
-							echo "<br>";
-							echo "<br>"; 
-														
+					   		$radioname = "pergunta-".$row['idPergunta'];
 							?>
+							
+							<fieldset name="<?php echo $row['idPergunta']; ?>" id="<?php echo $row['idPergunta']; ?>" >;
+								
+								
+								<?php
+								echo " <input type='radio' name='' id=''> ".$row['RespostaCorrecta'].""; 
+								echo "<br>";
+								echo " <input type='radio' name='' id=''> ".$row['RespostaErrada1'].""; 
+								echo "<br>";
+								echo " <input type='radio' name='' id=''> ".$row['RespostaErrada2'].""; 
+								echo "<br>";
+								echo " <input type='radio' name='' id=''> ".$row['RespostaErrada3'].""; 
+								echo "<br>";
+				   			?>
+				   		</fieldset>
+					 	  <br>
+ 			
+							
 						 	
 						 	<?php 
 						 		echo "</fieldset></center>";

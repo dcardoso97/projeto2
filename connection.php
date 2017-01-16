@@ -1,6 +1,6 @@
 <?php
 if (!isset($_SESSION)){session_start();}
-   $con=mysqli_connect("localhost","root","","login") or die (mysql_error()); 
+   $con=mysqli_connect("localhost","root","","proj") or die (mysql_error()); 
    $username = $_POST['username'];
    $password = $_POST['password'];
    $sqlquery1="Select un,pw from login where BINARY un= '".$username."' and BINARY pw='".$password."'";

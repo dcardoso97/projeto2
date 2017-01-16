@@ -3,7 +3,7 @@ if (!isset($_SESSION)){session_start();}
     
     	$conn=mysqli_connect("localhost","root","","proj");
     	$user=filter_input(INPUT_POST, 'username') ;
-	$pass=filter_input(INPUT_POST, 'password') ;
+		$pass=filter_input(INPUT_POST, 'password') ;
 		$var="Select Username from login where BINARY Username='".$user."' and BINARY Password='".$pass."'";
 		$result=mysqli_query($conn,$var);
 		$resp=mysqli_num_rows($result);

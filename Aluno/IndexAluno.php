@@ -1,8 +1,35 @@
 <?php 
 
+
 $conn=mysqli_connect("localhost","root","","proj");
 			            
+if (!isset($_SESSION))
+{
+     session_start();	
+     $user =$_SESSION['username'];
+}
 ?>
+<html>
+  <?php
+  if (empty($_SESSION['username'])){
+      header("Location:..\index2.php");
+  }
+  
+  if (empty($_SESSION['mensagem']))
+  {   
+  }
+  else
+      {
+  ?>
+        <div id="mensagem" class="alert alert-info" style="float:right;width:20%;">
+        <strong>Info!</strong> <?php echo $_SESSION['mensagem'];?>
+        </div>
+    <?php
+    }
+    ?>
+
+
+
 <html>
 	<head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -112,10 +139,25 @@ $conn=mysqli_connect("localhost","root","","proj");
     });
     </script>
         <!-- Page Content -->
+ <script language="javascript">
+<!--
+function myFunction(a) {
+    alert(a);
+}
+</script>
                          
 </a>  
 	<form action="AlterarAluno.php" method="POST">
-        <br><br>
+        <br><br><br>
+        	<?php $conn=mysqli_connect("localhost","root","","proj");
+			            $inst1="Select * from login where Username='".$_SESSION['username']."'";
+			            $query = mysqli_query($conn,$inst1);
+                                    $row = mysqli_fetch_row ($query);
+                                    $inst2="Select * from utilizador where idUtilizador='$row[0]'";
+                                   $query = mysqli_query($conn,$inst2);
+                                   $row = mysqli_fetch_assoc ($query);
+                                    
+                                    ?>
    		<center><h1> Os meus dados </h1></center>
      	 <br><br>
    		<div class="form-group row">
@@ -123,13 +165,7 @@ $conn=mysqli_connect("localhost","root","","proj");
 			  <div class="col-xs-10">
 			  	<?php
 
-			            
-			            $instS='Select Nome from utilizador';
-			            $query = mysqli_query($conn,$instS);
-			            while ($row = mysqli_fetch_row ($query))
-						{
-							echo " <input  style='width: 400px;'  readonly class='form-control' type='text' value=".$row[0]." id='example-text-input'>";
-						}
+					echo " <input  style='width: 400px;'  readonly class='form-control' type='text' value=".$row['Nome']." name='user' id='user'>";
 			  	?>
 			  </div>
 		</div>
@@ -138,12 +174,7 @@ $conn=mysqli_connect("localhost","root","","proj");
 		  <label for="example-date-input" class="col-xs-2 col-form-label">Data de Nascimento:</label>
 			  <div class="col-xs-10">
 			  		<?php
-						 $instS='Select DataNascimento from utilizador';
-				            $query = mysqli_query($conn,$instS);
-				            while ($row = mysqli_fetch_row ($query))
-							{
-								echo " <input style='width: 400px;' readonly class='form-control' type='date' value=".$row[0]." id='example-text-input'>";
-							}
+						echo " <input style='width: 400px;' readonly class='form-control' type='date' value=".$row['DataNascimento']." id='example-text-input'>";	
 			  		?>
 			 </div>
 		</div>
@@ -152,14 +183,8 @@ $conn=mysqli_connect("localhost","root","","proj");
 		  <label for="example-email-input" class="col-xs-2 col-form-label">Email:</label>
 			  <div class="col-xs-10">
 			  	<?php
-	
-						 $instS='Select Email from utilizador';
-				            $query = mysqli_query($conn,$instS);
-				            while ($row = mysqli_fetch_row ($query))
-							{
-								echo " <input style='width: 400px;' class='form-control' type='email' value=".$row[0]." id='email' name='email'>";
-							}
-			  		?>
+					echo " <input style='width: 400px;' class='form-control' type='email' value=".$row['Email']." id='email' name='email'>";
+			  	?>
 			  </div>
 		</div>
 
@@ -167,13 +192,7 @@ $conn=mysqli_connect("localhost","root","","proj");
 		  <label for="example-text-input" class="col-xs-2 col-form-label">CC:</label>
 			  <div class="col-xs-10">
 			  	<?php
-
-			            $instS='Select CC from utilizador';
-			            $query = mysqli_query($conn,$instS);
-			            while ($row = mysqli_fetch_row ($query))
-						{
-							echo " <input  style='width: 400px;'  readonly class='form-control' type='text' value=".$row[0]." id='example-text-input'>";
-						}
+					echo " <input  style='width: 400px;'  readonly class='form-control' type='text' value=".$row['CC']." id='example-text-input'>";
 			  	?>
 			 	  
 			  </div>
@@ -181,23 +200,15 @@ $conn=mysqli_connect("localhost","root","","proj");
 		
 		<div class="form-group row">
 		  <label for="example-number-input" class="col-xs-2 col-form-label">Tipo:</label>
-			  <div class="col-xs-10">
-				  	  	
-			  	  	<?php
-
-			            $instS='Select Tipo from utilizador';
-			            $query = mysqli_query($conn,$instS);
-			            while ($row = mysqli_fetch_row ($query))
-						{
-							echo " <input  style='width: 400px;'  readonly class='form-control' type='text' value=".$row[0]." id='example-text-input'>";
-						}
-			  		?>
-				   
-			
+			  <div class="col-xs-10">  	
+			  	<?php
+					echo " <input  style='width: 400px;'  readonly class='form-control' type='text' value=".$row['Tipo']." id='example-text-input'>";
+			  	?>
 			</div>
 		</div>
 		
- 		<button type="submit" class="btn btn-success">Alterar</button> 
+		<button type="submit" class="btn btn-success">Alterar</button> 
+ 		
  			</form>	
   
     </body>
