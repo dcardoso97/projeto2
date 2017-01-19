@@ -2,7 +2,7 @@
 <?php
 if (!isset($_SESSION)){session_start();}
     $conn=mysqli_connect("localhost","root"," ","proj");
-    echo $resposta=$_POST['resposta'];
+    echo $resposta=$_POST[''];
     
     $inst0="Select Resposta from aluno_teste ";
     $result0=mysqli_query($conn,$inst0);
@@ -11,7 +11,7 @@ if (!isset($_SESSION)){session_start();}
     if ($numlinhas1 == 0)
     {					
 					
-		 $resposta="Insert INTO aluno_teste(idResposta,RespostaCorreta) VALUES(' ','".$resposta."')";   
+		 $resposta="Insert INTO aluno_teste(RespostaCorreta,RespostaErrada1,RespostaErrada2,RespostaErrada3) VALUES(' ','".$resposta."')";   
 							
 		if(!mysqli_query($conn,$inst3)){ 
 			   echo 'erro :'. mysqli_error($conn);

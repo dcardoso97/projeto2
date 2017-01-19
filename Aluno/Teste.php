@@ -119,7 +119,7 @@ $user= $_SESSION['username'];
                 <div class="row">
                     <div class="col-lg-12">                    
 </a>  
-
+		<form action="EnviarRespostas.php" method="POST">
 	
 			<?php 
 		            
@@ -138,7 +138,7 @@ $user= $_SESSION['username'];
       		
       		<br>
    		
-		<form action="EnviarRespostas.php" method="POST">
+
 	        <?php
 			            
 			            $instS='Select * from perguntas';
@@ -146,6 +146,7 @@ $user= $_SESSION['username'];
 						
 			            while ($row = mysqli_fetch_assoc ($query))
 			            {echo"<br>";
+						  
 			            	echo"<center><fieldset style='border:solid; width:500px;'>";
 							
 			            	echo" <legend style='background: #FF9; width:150px; border: solid 1px black; 
@@ -158,30 +159,29 @@ $user= $_SESSION['username'];
 						    echo"<center>"
 						    	.$row['textoPerguntas'].""; //Buscar a pergunta a base de dados
 						    echo"<center>";
-							   
-						   	echo " <br>";    
 						    						    
  						   	echo " <h4><b> Resposta: </h4></b>";
 							
-					   		$radioname = "pergunta-".$row['idPergunta'];
-							?>
+							$radioname = "pergunta-".$row['idPergunta'];
 							
-							<fieldset name="<?php echo $row['idPergunta']; ?>" id="<?php echo $row['idPergunta']; ?>" >;
-								
-								
+							$items = array($row['RespostaCorrecta'],$row['RespostaErrada1'],$row['RespostaErrada2'],$row['RespostaErrada3']);				
+							
+							?>
+
+							<fieldset name="pergunta-<?php echo $radioname; ?>" id="pergunta-<?php echo $radioname; ?>" >
 								<?php
-								echo " <input type='radio' name='' id=''> ".$row['RespostaCorrecta'].""; 
-								echo "<br>";
-								echo " <input type='radio' name='' id=''> ".$row['RespostaErrada1'].""; 
-								echo "<br>";
-								echo " <input type='radio' name='' id=''> ".$row['RespostaErrada2'].""; 
-								echo "<br>";
-								echo " <input type='radio' name='' id=''> ".$row['RespostaErrada3'].""; 
-								echo "<br>";
-				   			?>
-				   		</fieldset>
+									echo " <input type='radio' name='pergunta-".$radioname."' id='pergunta-".$radioname."'> ".$items[rand(0, count($items) - 1)].""; 
+									echo "<br>";
+									echo " <input type='radio' name='pergunta-".$radioname."' id='pergunta-".$radioname."'> ".$items[rand(0, count($items) - 1)].""; 
+									echo "<br>";
+									echo " <input type='radio' name='pergunta-".$radioname."' id='pergunta-".$radioname."'> ".$items[rand(0, count($items) - 1)].""; 
+									echo "<br>";
+									echo " <input type='radio' name='pergunta-".$radioname."' id='pergunta-".$radioname."'> ".$items[rand(0, count($items) - 1)].""; 
+									echo "<br>";
+				   				?>
+				   			</fieldset>
 					 	  <br>
- 			
+ 			 			
 							
 						 	
 						 	<?php 
@@ -191,9 +191,10 @@ $user= $_SESSION['username'];
 			
   			 </div>
             </div>
-          <center> <a class="btn btn-default glyphicon glyphicon-ok" type="submit" href="#">Enviar</a></center>
+          <center> <a class="btn btn-default glyphicon glyphicon-ok" type="submit" href="#"> Enviar</a></center>
+       </form>
        <!--  <a class="btn btn-default glyphicon glyphicon-ok" href="#"></a> --> 
     </div>
-</form>
+
 </body>
 </html><!-- Meio-->
